@@ -104,25 +104,26 @@
     --panel: #ffffff;
     --text: #17191c;
     --text-muted: #48515b;
-    --text-faint: #626d78;
-    --border: #c9cfd6;
+    --text-faint: #4a545f;
+    --border: #848990;
     --border-strong: #747e89;
-    --accent: #0057a8;
+    --accent: #0052a2;
     --accent-hover: #003f7d;
     --accent-soft: #dcecff;
     --on-accent: #ffffff;
-    --selection: #b9dcff;
+    --selection: var(--accent);
     --focus: #006ed3;
     --quote: #f2f6fa;
     --mark: #ffdf6b;
-    --danger: #a51d2d;
-    --success: #166534;
-    --warning: #754c00;
+    --mark-edge: #9a6a00;
+    --danger: #a2192b;
+    --success: #0d5f2f;
+    --warning: #734a00;
     --important: #673a8e;
     --code-keyword: #6c2a91;
-    --code-string: #25611f;
-    --code-number: #8c3f00;
-    --code-type: #005f73;
+    --code-string: #235f1d;
+    --code-number: #893d00;
+    --code-type: #005b6f;
     --shadow: 0 12px 32px rgba(18, 24, 31, 0.16);
 
     --font-body: "B612", Arial, sans-serif;
@@ -132,6 +133,11 @@
     /* Writing-area width. Code blocks fit 80 columns of B612 Mono here;
        the wider-window steps below fit 100 and 120. */
     --write-width: 60rem;
+
+    /* One rhythm for every block, one shape for every box. */
+    --space-block: 1.5em;
+    --radius: 0.4rem;
+    --radius-small: 0.25rem;
 
     /* Typora-recognized theme variables. */
     --bg-color: var(--bg);
@@ -148,7 +154,7 @@
     --item-hover-text-color: var(--text);
     --window-border: 1px solid var(--border);
     --select-text-bg-color: var(--selection);
-    --select-text-font-color: #111111;
+    --select-text-font-color: var(--on-accent);
     --rawblock-edit-panel-bd: var(--surface);
     --mermaid-theme: neutral;
     --mermaid-font-family: var(--font-heading);
@@ -277,34 +283,38 @@ a:hover {
     text-decoration-thickness: 0.14em;
 }
 
+/* Important, so Typora's own outline resets can't hide keyboard focus. The editor keeps its caret. */
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
 select:focus-visible,
 textarea:focus-visible,
-[tabindex]:focus-visible {
-    outline: 3px solid var(--focus);
-    outline-offset: 2px;
+[tabindex]:not(#write):focus-visible {
+    outline: 3px solid var(--focus) !important;
+    outline-offset: 2px !important;
 }
 
+/* The edge marks highlights without relying on color alone. */
 mark {
-    color: #151515;
-    background: var(--mark);
     padding: 0.03em 0.14em;
+    border-radius: var(--radius-small);
+    background: var(--mark);
+    color: #151515;
+    box-shadow: inset 0 0 0 1px var(--mark-edge);
 }
 
 hr {
     height: 0;
-    margin: 2.5em 0;
+    margin: calc(var(--space-block) * 2) 0;
     border: 0;
     border-top: 2px solid var(--border-strong);
 }
 
 blockquote {
-    margin: 1.5em 0;
+    margin: var(--space-block) 0;
     padding: 1em 1.25em;
     border-left: 0.35rem solid var(--border-strong);
-    border-radius: 0 0.35rem 0.35rem 0;
+    border-radius: 0 var(--radius) var(--radius) 0;
     background: var(--quote);
     color: var(--text-muted);
 }
@@ -393,7 +403,8 @@ li.task-list-item {
     list-style: none;
 }
 
-li.task-list-item > input[type="checkbox"] {
+/* #write outranks Typora's own "#write input" rule, which otherwise resets the size. */
+#write li.task-list-item > input[type="checkbox"] {
     width: 1rem;
     height: 1rem;
     margin: 0 0.55em 0 -1.45em;
@@ -412,7 +423,7 @@ code,
 tt {
     padding: 0.1em 0.34em;
     border: 1px solid var(--border);
-    border-radius: 0.25rem;
+    border-radius: var(--radius-small);
     background: var(--surface);
     color: var(--text);
     font-size: 0.91em;
@@ -420,11 +431,11 @@ tt {
 
 pre.md-fences,
 pre.md-meta-block {
-    margin: 1.5em 0;
+    margin: var(--space-block) 0;
     padding: 1.05em 1.2em;
     overflow-x: auto;
     border: 1px solid var(--border-strong);
-    border-radius: 0.4rem;
+    border-radius: var(--radius);
     background: var(--surface);
     color: var(--text);
     font-size: 0.9em;
@@ -509,8 +520,15 @@ pre.md-fences .CodeMirror-gutters,
     background: transparent !important;
 }
 
-.md-table-wrap {
-    margin: 1.75em 0;
+/* A pattern as well as a color, so errors don't rely on color alone. */
+.cm-error {
+    text-decoration: underline wavy;
+    text-decoration-skip-ink: none;
+}
+
+/* Typora wraps each table in a figure. */
+#write figure {
+    margin: var(--space-block) 0;
     overflow-x: auto;
 }
 
@@ -545,7 +563,7 @@ kbd {
     padding: 0.12em 0.42em;
     border: 1px solid var(--border-strong);
     border-bottom-width: 2px;
-    border-radius: 0.25rem;
+    border-radius: var(--radius-small);
     background: var(--surface);
     color: var(--text);
     font-family: var(--font-mono);
@@ -555,7 +573,7 @@ kbd {
 img {
     display: block;
     max-width: 100%;
-    margin: 1.75em auto;
+    margin: var(--space-block) auto;
 }
 
 .md-image > .md-meta,
@@ -576,7 +594,7 @@ img {
 .md-htmlblock:hover > .md-rawblock-container,
 .md-htmlblock.md-rawblock-on-edit > .md-rawblock-container {
     border: 1px solid var(--border);
-    border-radius: 0.4rem;
+    border-radius: var(--radius);
     background: var(--surface);
     color: var(--text);
     box-shadow: none;
@@ -594,14 +612,14 @@ img {
 }
 
 .md-search-hit {
-    border-radius: 0.15em;
+    border-radius: var(--radius-small);
     background: var(--mark);
     color: #151515 !important;
-    box-shadow: inset 0 -2px 0 #9a6a00;
+    box-shadow: inset 0 -2px 0 var(--mark-edge);
 }
 
 .md-search-select {
-    border-radius: 0.15em;
+    border-radius: var(--radius-small);
     background: #ffbd38;
     color: #111111 !important;
     box-shadow: 0 0 0 2px var(--focus);
@@ -613,21 +631,21 @@ sup.md-footnote {
 }
 
 .md-footnotes {
-    margin-top: 3em;
-    padding: 1.1em 1.3em;
+    margin-top: calc(var(--space-block) * 2);
+    padding: 1em 1.25em;
     border: 1px solid var(--border);
     border-top: 3px solid var(--border-strong);
-    border-radius: 0.35rem;
+    border-radius: var(--radius);
     background: var(--surface);
     color: var(--text-muted);
     font-size: 0.9em;
 }
 
 .md-toc {
-    margin: 2em 0;
+    margin: var(--space-block) 0;
     padding: 1em 1.25em;
     border: 1px solid var(--border);
-    border-radius: 0.35rem;
+    border-radius: var(--radius);
     background: var(--surface);
     color: var(--text-muted);
     font-family: var(--font-heading);
@@ -645,7 +663,7 @@ sup.md-footnote {
 #typora-sidebar .file-node-content,
 #typora-sidebar .outline-item,
 #typora-sidebar .ty-sidebar-footer {
-    border-radius: 0.25rem;
+    border-radius: var(--radius-small);
 }
 
 #typora-sidebar .file-node-content:hover,
@@ -806,6 +824,18 @@ textarea {
     }
 }
 
+/* Respect the system's reduce-motion setting; near-zero durations still fire end events. */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
 @media print {
     :root {
         color-scheme: light;
@@ -816,13 +846,12 @@ textarea {
         --text: #000000;
         --text-muted: #333333;
         --text-faint: #4d4d4d;
-        --border: #9a9a9a;
+        --border: #8a8a8a;
         --border-strong: #333333;
         --quote: #f5f5f5;
         --accent: #004c92;
         --accent-hover: #00376a;
         --on-accent: #ffffff;
-        --selection: #cce4ff;
     }
 
     #write {
@@ -849,5 +878,25 @@ textarea {
         text-shadow: none !important;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
+    }
+
+    mark {
+        box-shadow: inset 0 0 0 1px var(--mark-edge) !important;
+    }
+
+    /* Keep lines, boxes and rows together across page breaks. */
+    p,
+    li {
+        orphans: 3;
+        widows: 3;
+    }
+
+    blockquote,
+    pre.md-fences,
+    img,
+    tr,
+    .md-toc,
+    .md-math-block {
+        break-inside: avoid;
     }
 }

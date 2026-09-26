@@ -41,6 +41,13 @@ code on A4 and Letter.
 
 Open `sample.md` to see every element.
 
+## Accessibility
+
+Legible is built to [WCAG 2.2](https://www.w3.org/TR/WCAG22/), the standard behind Section 508 and
+EN 301 549: every text color meets AAA contrast (7:1), borders and focus rings meet 3:1, and nothing
+is lost when you enlarge text or spacing. Its spacing follows ISO 9241-110's call for a consistent,
+predictable layout.
+
 ## License
 
 The theme is [MIT](LICENSE). B612 and Lato are under the

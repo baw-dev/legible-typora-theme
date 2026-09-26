@@ -20,13 +20,12 @@
         --text: #f6f7f9;
         --text-muted: #c3cad3;
         --text-faint: #9aa5b1;
-        --border: #56616d;
+        --border: #66717d;
         --border-strong: #9aa5b1;
         --accent: #8ec5ff;
         --accent-hover: #c9e4ff;
         --accent-soft: #183757;
         --on-accent: #07131f;
-        --selection: #4f9cdb;
         --focus: #73baff;
         --quote: #151c23;
         --danger: #ff9da6;
@@ -39,7 +38,6 @@
         --code-type: #8edee5;
         --shadow: 0 16px 38px rgba(0, 0, 0, 0.55);
 
-        --select-text-font-color: #07131f;
         --mermaid-theme: dark;
     }
 }
