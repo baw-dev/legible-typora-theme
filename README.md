@@ -15,8 +15,14 @@ its basic shape yet looks as unlike the others as possible, so none can be mista
 for another.
 
 [B612](https://github.com/polarsys/b612) takes its name from the Little Prince's
-asteroid, a tribute to the pilot and author Antoine de Saint-Exupéry. Legible ships
-all eight styles, with [Lato](https://www.latofonts.com) for headings.
+asteroid, a tribute to the pilot and author Antoine de Saint-Exupéry.
+
+> Perfection is achieved, not when there is nothing more to add, but when there is
+> nothing left to take away.
+>
+> — Antoine de Saint-Exupéry, writing about aircraft design in *Wind, Sand and Stars*
+
+Legible ships all eight styles, with [Lato](https://www.latofonts.com) for headings.
 
 ## Install
 

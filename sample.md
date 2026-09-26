@@ -16,7 +16,7 @@ B612 follows three rules:
 >
 > — Antoine de Saint-Exupéry, *The Little Prince*
 
-Text can be **bold**, *italic*, ==highlighted==, `code` or a [link](https://github.com/polarsys/b612). Press <kbd>Ctrl</kbd> <kbd>/</kbd> (<kbd>⌘</kbd> <kbd>/</kbd> on a Mac) to see this page as markdown.
+Text can be **bold**, *italic*, <mark>highlighted</mark>, `code` or a [link](https://github.com/polarsys/b612). Press <kbd>Ctrl</kbd> <kbd>/</kbd> (<kbd>⌘</kbd> <kbd>/</kbd> on a Mac) to see this page as markdown.
 
 - [x] Light theme
 - [x] Dark theme
