@@ -155,6 +155,8 @@
     --window-border: 1px solid var(--border);
     --select-text-bg-color: var(--selection);
     --select-text-font-color: var(--on-accent);
+    --search-select-bg-color: #ffbd38;
+    --search-select-text-color: #111111;
     --rawblock-edit-panel-bd: var(--surface);
     --mermaid-theme: neutral;
     --mermaid-font-family: var(--font-heading);
@@ -323,59 +325,66 @@ blockquote > :last-child {
     margin-bottom: 0;
 }
 
-blockquote.md-alert,
-blockquote:has(.md-alert-text-container) {
-    border-left-color: var(--accent);
+/* Typora draws GitHub alerts as div.md-alert; they share the quote's look. */
+.md-alert {
+    margin: var(--space-block) 0;
+    padding: 1em 1.25em;
+    border-left: 0.35rem solid var(--accent);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    background: var(--quote);
     color: var(--text);
 }
 
-blockquote.md-alert .md-alert-text-container,
-blockquote:has(.md-alert-text-container) .md-alert-text-container {
-    margin-bottom: 0.4em;
-    color: var(--accent);
+.md-alert > :last-child {
+    margin-bottom: 0;
+}
+
+/* The label is the text itself in exports and an ::after in the editor. */
+.md-alert-text,
+.md-alert-text-container::after {
     font-family: var(--font-heading);
     font-weight: 900;
     letter-spacing: 0.05em;
     text-transform: uppercase;
 }
 
-blockquote.md-alert-tip,
-blockquote:has(.md-alert-text-tip) {
+.md-alert.md-alert-note {
+    border-left-color: var(--accent);
+}
+
+.md-alert.md-alert-tip {
     border-left-color: var(--success);
 }
 
-blockquote.md-alert-tip .md-alert-text-container,
-blockquote:has(.md-alert-text-tip) .md-alert-text-container {
-    color: var(--success);
-}
-
-blockquote.md-alert-important,
-blockquote:has(.md-alert-text-important) {
+.md-alert.md-alert-important {
     border-left-color: var(--important);
 }
 
-blockquote.md-alert-important .md-alert-text-container,
-blockquote:has(.md-alert-text-important) .md-alert-text-container {
-    color: var(--important);
-}
-
-blockquote.md-alert-warning,
-blockquote:has(.md-alert-text-warning) {
+.md-alert.md-alert-warning {
     border-left-color: var(--warning);
 }
 
-blockquote.md-alert-warning .md-alert-text-container,
-blockquote:has(.md-alert-text-warning) .md-alert-text-container {
-    color: var(--warning);
-}
-
-blockquote.md-alert-caution,
-blockquote:has(.md-alert-text-caution) {
+.md-alert.md-alert-caution {
     border-left-color: var(--danger);
 }
 
-blockquote.md-alert-caution .md-alert-text-container,
-blockquote:has(.md-alert-text-caution) .md-alert-text-container {
+.md-alert-text-note {
+    color: var(--accent);
+}
+
+.md-alert-text-tip {
+    color: var(--success);
+}
+
+.md-alert-text-important {
+    color: var(--important);
+}
+
+.md-alert-text-warning {
+    color: var(--warning);
+}
+
+.md-alert-text-caution {
     color: var(--danger);
 }
 
@@ -474,13 +483,27 @@ pre.md-fences .CodeMirror-gutters,
     color: var(--select-text-font-color) !important;
 }
 
+/* Every token class gets a theme color; Typora's light-theme defaults would show through otherwise. */
+.cm-variable,
+.cm-code {
+    color: var(--text) !important;
+}
+
+.cm-operator,
+.cm-bracket,
+.cm-hr,
+.cm-quote {
+    color: var(--text-muted) !important;
+}
+
 .cm-keyword,
 .cm-tag,
 .cm-attribute,
 .cm-property,
 .cm-def,
 .cm-builtin,
-.cm-qualifier {
+.cm-qualifier,
+.cm-header {
     color: var(--code-keyword) !important;
 }
 
@@ -490,13 +513,15 @@ pre.md-fences .CodeMirror-gutters,
 }
 
 .cm-number,
-.cm-atom {
+.cm-atom,
+.cm-constant {
     color: var(--code-number) !important;
 }
 
 .cm-type,
 .cm-variable-2,
-.cm-variable-3 {
+.cm-variable-3,
+.cm-defined {
     color: var(--code-type) !important;
 }
 
@@ -515,15 +540,34 @@ pre.md-fences .CodeMirror-gutters,
 }
 
 .cm-negative,
-.cm-error {
+.cm-error,
+.cm-invalidchar {
     color: var(--danger) !important;
     background: transparent !important;
 }
 
-/* A pattern as well as a color, so errors don't rely on color alone. */
-.cm-error {
+/* A pattern as well as a color, so errors and bracket pairs don't rely on color alone. */
+.cm-error,
+.cm-invalidchar {
     text-decoration: underline wavy;
     text-decoration-skip-ink: none;
+}
+
+div.CodeMirror span.CodeMirror-matchingbracket {
+    color: var(--success) !important;
+    text-decoration: underline;
+}
+
+div.CodeMirror span.CodeMirror-nonmatchingbracket {
+    color: var(--danger) !important;
+    text-decoration: underline wavy;
+}
+
+/* Search hits in code look like hits in prose. */
+.cm-search-hit {
+    background: var(--mark) !important;
+    color: #151515 !important;
+    box-shadow: inset 0 -2px 0 var(--mark-edge);
 }
 
 /* Typora wraps each table in a figure. */
@@ -620,8 +664,8 @@ img {
 
 .md-search-select {
     border-radius: var(--radius-small);
-    background: #ffbd38;
-    color: #111111 !important;
+    background: var(--search-select-bg-color);
+    color: var(--search-select-text-color) !important;
     box-shadow: 0 0 0 2px var(--focus);
 }
 
@@ -630,15 +674,16 @@ sup.md-footnote {
     background: transparent;
 }
 
-.md-footnotes {
-    margin-top: calc(var(--space-block) * 2);
-    padding: 1em 1.25em;
-    border: 1px solid var(--border);
-    border-top: 3px solid var(--border-strong);
-    border-radius: var(--radius);
-    background: var(--surface);
+/* Footnotes are div.footnotes in the editor and .footnotes-area in exports; Typora fades both. */
+.footnotes,
+.footnotes-area {
     color: var(--text-muted);
     font-size: 0.9em;
+    opacity: 1;
+}
+
+.footnote-line {
+    font-size: inherit;
 }
 
 .md-toc {
@@ -892,6 +937,7 @@ textarea {
     }
 
     blockquote,
+    .md-alert,
     pre.md-fences,
     img,
     tr,

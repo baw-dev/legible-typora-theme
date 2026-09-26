@@ -3,8 +3,8 @@
 A high-contrast theme for [Typora](https://typora.io), in light and dark, set in the
 typeface Airbus made for cockpit screens.
 
-![The sample document in Legible](screenshots/light.png)
-![The same document in Legible Dark](screenshots/dark.png)
+![Legible: a heading, a tip, a Python code block and a table of contrast ratios](screenshots/light.png)
+![The same page in Legible Dark](screenshots/dark.png)
 
 ## Why B612
 
