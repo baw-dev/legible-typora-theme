@@ -1,0 +1,853 @@
+/*
+ * Legible for Typora
+ * A high-contrast theme set in B612, the Airbus cockpit typeface.
+ * https://github.com/baw-dev/legible-typora-theme
+ */
+
+/* Typora drops bundled fonts from HTML exports; exported pages load these instead. */
+@include-when-export url(https://fonts.bunny.net/css?family=b612:400,400i,700,700i|b612-mono:400,400i,700,700i|lato:400,700,900&display=swap);
+
+@font-face {
+    font-family: "B612";
+    src: url("./legible/B612-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "B612";
+    src: url("./legible/B612-Italic.ttf") format("truetype");
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "B612";
+    src: url("./legible/B612-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "B612";
+    src: url("./legible/B612-BoldItalic.ttf") format("truetype");
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "B612 Mono";
+    src: url("./legible/B612Mono-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "B612 Mono";
+    src: url("./legible/B612Mono-Italic.ttf") format("truetype");
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "B612 Mono";
+    src: url("./legible/B612Mono-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "B612 Mono";
+    src: url("./legible/B612Mono-BoldItalic.ttf") format("truetype");
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Lato";
+    src: url("./legible/Lato-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Lato";
+    src: url("./legible/Lato-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Lato";
+    src: url("./legible/Lato-Black.ttf") format("truetype");
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    color-scheme: light;
+
+    --bg: #ffffff;
+    --surface: #f6f7f8;
+    --surface-strong: #eceff2;
+    --panel: #ffffff;
+    --text: #17191c;
+    --text-muted: #48515b;
+    --text-faint: #626d78;
+    --border: #c9cfd6;
+    --border-strong: #747e89;
+    --accent: #0057a8;
+    --accent-hover: #003f7d;
+    --accent-soft: #dcecff;
+    --on-accent: #ffffff;
+    --selection: #b9dcff;
+    --focus: #006ed3;
+    --quote: #f2f6fa;
+    --mark: #ffdf6b;
+    --danger: #a51d2d;
+    --success: #166534;
+    --warning: #754c00;
+    --important: #673a8e;
+    --code-keyword: #6c2a91;
+    --code-string: #25611f;
+    --code-number: #8c3f00;
+    --code-type: #005f73;
+    --shadow: 0 12px 32px rgba(18, 24, 31, 0.16);
+
+    --font-body: "B612", Arial, sans-serif;
+    --font-heading: "Lato", Arial, sans-serif;
+    --font-mono: "B612 Mono", "SFMono-Regular", Consolas, monospace;
+
+    /* Writing-area width. Code blocks fit 80 columns of B612 Mono here;
+       the wider-window steps below fit 100 and 120. */
+    --write-width: 60rem;
+
+    /* Typora-recognized theme variables. */
+    --bg-color: var(--bg);
+    --text-color: var(--text);
+    --side-bar-bg-color: var(--panel);
+    --control-text-color: var(--text-muted);
+    --primary-color: var(--accent);
+    --primary-btn-border-color: var(--accent);
+    --primary-btn-text-color: var(--on-accent);
+    --active-file-bg-color: var(--accent-soft);
+    --active-file-text-color: var(--text);
+    --active-file-border-color: var(--accent);
+    --item-hover-bg-color: var(--surface-strong);
+    --item-hover-text-color: var(--text);
+    --window-border: 1px solid var(--border);
+    --select-text-bg-color: var(--selection);
+    --select-text-font-color: #111111;
+    --rawblock-edit-panel-bd: var(--surface);
+    --mermaid-theme: neutral;
+    --mermaid-font-family: var(--font-heading);
+}
+
+html {
+    font-size: 16px;
+    background: var(--bg);
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+html,
+body,
+#typora-sidebar,
+#typora-source {
+    background-color: var(--bg);
+}
+
+::selection {
+    color: var(--select-text-font-color);
+    background: var(--select-text-bg-color);
+}
+
+#write {
+    box-sizing: border-box;
+    width: min(100%, var(--write-width));
+    max-width: var(--write-width);
+    margin: 0 auto;
+    padding: 3.75rem 2rem 10rem;
+    color: var(--text);
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    overflow-wrap: anywhere;
+    caret-color: var(--text);
+}
+
+#write > :first-child {
+    margin-top: 0;
+}
+
+#typora-source .CodeMirror-lines {
+    max-width: var(--write-width);
+}
+
+p {
+    margin: 0 0 1em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--text);
+    font-family: var(--font-heading);
+    line-height: 1.22;
+    letter-spacing: 0.005em;
+    page-break-after: avoid;
+}
+
+h1 {
+    margin: 0 0 1.25em;
+    font-size: 2.35em;
+    font-weight: 900;
+    letter-spacing: -0.025em;
+}
+
+h2 {
+    margin: 2.2em 0 0.65em;
+    padding-bottom: 0.24em;
+    border-bottom: 2px solid var(--border-strong);
+    font-size: 1.7em;
+    font-weight: 900;
+    letter-spacing: -0.015em;
+}
+
+h3 {
+    margin: 1.85em 0 0.55em;
+    font-size: 1.35em;
+    font-weight: 900;
+}
+
+h4 {
+    margin: 1.6em 0 0.45em;
+    font-size: 1.12em;
+    font-weight: 700;
+}
+
+h5,
+h6 {
+    margin: 1.4em 0 0.4em;
+    font-size: 1em;
+    font-weight: 700;
+}
+
+h6 {
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+strong,
+b {
+    font-weight: 700;
+}
+
+a {
+    color: var(--accent);
+    text-decoration: underline;
+    text-decoration-thickness: 0.09em;
+    text-underline-offset: 0.15em;
+}
+
+a:hover {
+    color: var(--accent-hover);
+    text-decoration-thickness: 0.14em;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+    outline: 3px solid var(--focus);
+    outline-offset: 2px;
+}
+
+mark {
+    color: #151515;
+    background: var(--mark);
+    padding: 0.03em 0.14em;
+}
+
+hr {
+    height: 0;
+    margin: 2.5em 0;
+    border: 0;
+    border-top: 2px solid var(--border-strong);
+}
+
+blockquote {
+    margin: 1.5em 0;
+    padding: 1em 1.25em;
+    border-left: 0.35rem solid var(--border-strong);
+    border-radius: 0 0.35rem 0.35rem 0;
+    background: var(--quote);
+    color: var(--text-muted);
+}
+
+blockquote > :last-child {
+    margin-bottom: 0;
+}
+
+blockquote.md-alert,
+blockquote:has(.md-alert-text-container) {
+    border-left-color: var(--accent);
+    color: var(--text);
+}
+
+blockquote.md-alert .md-alert-text-container,
+blockquote:has(.md-alert-text-container) .md-alert-text-container {
+    margin-bottom: 0.4em;
+    color: var(--accent);
+    font-family: var(--font-heading);
+    font-weight: 900;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+blockquote.md-alert-tip,
+blockquote:has(.md-alert-text-tip) {
+    border-left-color: var(--success);
+}
+
+blockquote.md-alert-tip .md-alert-text-container,
+blockquote:has(.md-alert-text-tip) .md-alert-text-container {
+    color: var(--success);
+}
+
+blockquote.md-alert-important,
+blockquote:has(.md-alert-text-important) {
+    border-left-color: var(--important);
+}
+
+blockquote.md-alert-important .md-alert-text-container,
+blockquote:has(.md-alert-text-important) .md-alert-text-container {
+    color: var(--important);
+}
+
+blockquote.md-alert-warning,
+blockquote:has(.md-alert-text-warning) {
+    border-left-color: var(--warning);
+}
+
+blockquote.md-alert-warning .md-alert-text-container,
+blockquote:has(.md-alert-text-warning) .md-alert-text-container {
+    color: var(--warning);
+}
+
+blockquote.md-alert-caution,
+blockquote:has(.md-alert-text-caution) {
+    border-left-color: var(--danger);
+}
+
+blockquote.md-alert-caution .md-alert-text-container,
+blockquote:has(.md-alert-text-caution) .md-alert-text-container {
+    color: var(--danger);
+}
+
+ul,
+ol {
+    margin: 0.65em 0 1.1em;
+    padding-left: 1.8em;
+}
+
+li {
+    margin: 0.25em 0;
+    padding-left: 0.18em;
+}
+
+li::marker {
+    color: var(--text-muted);
+    font-weight: 700;
+}
+
+ul.task-list {
+    padding-left: 1.5em;
+}
+
+li.task-list-item {
+    list-style: none;
+}
+
+li.task-list-item > input[type="checkbox"] {
+    width: 1rem;
+    height: 1rem;
+    margin: 0 0.55em 0 -1.45em;
+    accent-color: var(--accent);
+    transform: translateY(0.12em);
+}
+
+code,
+tt,
+pre,
+#typora-source {
+    font-family: var(--font-mono);
+}
+
+code,
+tt {
+    padding: 0.1em 0.34em;
+    border: 1px solid var(--border);
+    border-radius: 0.25rem;
+    background: var(--surface);
+    color: var(--text);
+    font-size: 0.91em;
+}
+
+pre.md-fences,
+pre.md-meta-block {
+    margin: 1.5em 0;
+    padding: 1.05em 1.2em;
+    overflow-x: auto;
+    border: 1px solid var(--border-strong);
+    border-radius: 0.4rem;
+    background: var(--surface);
+    color: var(--text);
+    font-size: 0.9em;
+    line-height: 1.55;
+    text-align: left;
+    tab-size: 4;
+    hyphens: none;
+}
+
+pre.md-fences code {
+    padding: 0;
+    border: 0;
+    background: transparent;
+}
+
+pre.md-fences .CodeMirror,
+pre.md-fences .CodeMirror-scroll,
+pre.md-fences .CodeMirror-gutters,
+.cm-s-inner,
+.cm-s-typora-default {
+    background: var(--surface);
+    color: var(--text);
+    font-family: var(--font-mono);
+}
+
+.CodeMirror-cursor,
+.cm-fat-cursor {
+    border-left-color: var(--text) !important;
+}
+
+.CodeMirror-selected,
+.CodeMirror-selectedtext,
+.cm-s-inner div.CodeMirror-selected,
+.cm-s-typora-default div.CodeMirror-selected {
+    background: var(--selection) !important;
+    color: var(--select-text-font-color) !important;
+}
+
+.cm-keyword,
+.cm-tag,
+.cm-attribute,
+.cm-property,
+.cm-def,
+.cm-builtin,
+.cm-qualifier {
+    color: var(--code-keyword) !important;
+}
+
+.cm-string,
+.cm-string-2 {
+    color: var(--code-string) !important;
+}
+
+.cm-number,
+.cm-atom {
+    color: var(--code-number) !important;
+}
+
+.cm-type,
+.cm-variable-2,
+.cm-variable-3 {
+    color: var(--code-type) !important;
+}
+
+.cm-comment,
+.cm-meta {
+    color: var(--text-faint) !important;
+    font-style: italic;
+}
+
+.cm-link {
+    color: var(--accent) !important;
+}
+
+.cm-positive {
+    color: var(--success) !important;
+}
+
+.cm-negative,
+.cm-error {
+    color: var(--danger) !important;
+    background: transparent !important;
+}
+
+.md-table-wrap {
+    margin: 1.75em 0;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border: 1px solid var(--border-strong);
+    border-collapse: collapse;
+    background: var(--panel);
+    font-size: 0.95em;
+}
+
+th,
+td {
+    padding: 0.65em 0.8em;
+    border: 1px solid var(--border);
+    text-align: left;
+    vertical-align: top;
+}
+
+th {
+    border-bottom-color: var(--border-strong);
+    background: var(--surface-strong);
+    font-family: var(--font-heading);
+    font-weight: 700;
+}
+
+tbody tr:nth-child(even) td {
+    background: var(--surface);
+}
+
+kbd {
+    padding: 0.12em 0.42em;
+    border: 1px solid var(--border-strong);
+    border-bottom-width: 2px;
+    border-radius: 0.25rem;
+    background: var(--surface);
+    color: var(--text);
+    font-family: var(--font-mono);
+    font-size: 0.86em;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    margin: 1.75em auto;
+}
+
+.md-image > .md-meta,
+.md-meta,
+.md-content {
+    color: var(--text-faint);
+    font-family: var(--font-mono);
+}
+
+.md-math-block,
+.md-inline-math,
+.mathjax-block,
+.mathjax-block .md-math-container {
+    color: var(--text);
+}
+
+.mathjax-block .md-mathblock-panel,
+.md-htmlblock:hover > .md-rawblock-container,
+.md-htmlblock.md-rawblock-on-edit > .md-rawblock-container {
+    border: 1px solid var(--border);
+    border-radius: 0.4rem;
+    background: var(--surface);
+    color: var(--text);
+    box-shadow: none;
+}
+
+.md-htmlblock .CodeMirror,
+.md-htmlblock .CodeMirror-scroll,
+.md-htmlblock .CodeMirror-lines,
+.md-htmlblock .CodeMirror-gutters,
+.md-htmlblock .md-rawblock-input,
+.md-htmlblock .md-rawblock-tooltip {
+    background: var(--surface);
+    color: var(--text);
+    font-family: var(--font-mono);
+}
+
+.md-search-hit {
+    border-radius: 0.15em;
+    background: var(--mark);
+    color: #151515 !important;
+    box-shadow: inset 0 -2px 0 #9a6a00;
+}
+
+.md-search-select {
+    border-radius: 0.15em;
+    background: #ffbd38;
+    color: #111111 !important;
+    box-shadow: 0 0 0 2px var(--focus);
+}
+
+sup.md-footnote {
+    color: var(--accent);
+    background: transparent;
+}
+
+.md-footnotes {
+    margin-top: 3em;
+    padding: 1.1em 1.3em;
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--border-strong);
+    border-radius: 0.35rem;
+    background: var(--surface);
+    color: var(--text-muted);
+    font-size: 0.9em;
+}
+
+.md-toc {
+    margin: 2em 0;
+    padding: 1em 1.25em;
+    border: 1px solid var(--border);
+    border-radius: 0.35rem;
+    background: var(--surface);
+    color: var(--text-muted);
+    font-family: var(--font-heading);
+}
+
+/* Application chrome */
+#typora-sidebar {
+    border-right: 1px solid var(--border);
+    background: var(--panel);
+    color: var(--text-muted);
+    font-family: var(--font-heading);
+    font-size: 0.92rem;
+}
+
+#typora-sidebar .file-node-content,
+#typora-sidebar .outline-item,
+#typora-sidebar .ty-sidebar-footer {
+    border-radius: 0.25rem;
+}
+
+#typora-sidebar .file-node-content:hover,
+#typora-sidebar .outline-item:hover,
+#typora-sidebar .ty-sidebar-footer-item:hover {
+    background: var(--item-hover-bg-color);
+    color: var(--item-hover-text-color);
+}
+
+#typora-sidebar .active,
+#typora-sidebar .file-node.active > .file-node-content,
+#typora-sidebar .outline-item.active {
+    background: var(--active-file-bg-color);
+    color: var(--active-file-text-color);
+    box-shadow: inset 3px 0 0 var(--active-file-border-color);
+    font-weight: 700;
+}
+
+.dropdown-menu,
+.context-menu,
+.popover,
+.modal-content,
+.dialog,
+.auto-suggest-container,
+#md-searchpanel,
+.megamenu-content,
+.ty-preferences,
+.ty-preferences-panel {
+    border: 1px solid var(--border) !important;
+    background: var(--panel) !important;
+    color: var(--text) !important;
+    box-shadow: var(--shadow);
+    font-family: var(--font-heading);
+}
+
+.dropdown-menu li > a,
+.context-menu li > a,
+.auto-suggest-container li,
+.typora-quick-open-item {
+    color: var(--text) !important;
+}
+
+.dropdown-menu li > a:hover,
+.context-menu li > a:hover,
+.auto-suggest-container li:hover,
+.auto-suggest-container li.active,
+.typora-quick-open-item:hover,
+.typora-quick-open-item.active {
+    background: var(--surface-strong) !important;
+}
+
+.btn,
+.dialog .btn,
+.modal-content .btn,
+.popover .btn {
+    border: 1px solid var(--border-strong);
+    background: var(--panel);
+    color: var(--text);
+    box-shadow: none;
+    font-family: var(--font-heading);
+    font-weight: 700;
+}
+
+.btn:hover {
+    background: var(--surface-strong);
+}
+
+.btn-primary {
+    border-color: var(--accent) !important;
+    background: var(--accent) !important;
+    color: var(--on-accent) !important;
+}
+
+input,
+select,
+textarea {
+    border: 1px solid var(--border-strong) !important;
+    background: var(--surface) !important;
+    color: var(--text) !important;
+    font-family: var(--font-heading);
+}
+
+.tooltip-inner,
+.ty-tooltip,
+.code-tooltip.md-hover-tip.md-f-tooltip {
+    border: 1px solid var(--border);
+    background: var(--panel);
+    color: var(--text);
+    box-shadow: var(--shadow);
+    font-family: var(--font-heading);
+}
+
+/* Diagrams inherit the same high-contrast palette. */
+.md-diagram-panel-preview text,
+.md-diagram-panel-preview tspan,
+.md-diagram-panel-preview .label,
+.md-diagram-panel-preview .nodeLabel,
+.md-diagram-panel-preview .edgeLabel {
+    fill: var(--text) !important;
+    color: var(--text) !important;
+    font-family: var(--font-heading) !important;
+}
+
+.md-diagram-panel-preview .node rect,
+.md-diagram-panel-preview .node circle,
+.md-diagram-panel-preview .node ellipse,
+.md-diagram-panel-preview .node polygon {
+    fill: var(--surface) !important;
+    stroke: var(--border-strong) !important;
+}
+
+.md-diagram-panel-preview .edgePath path,
+.md-diagram-panel-preview .flowchart-link,
+.md-diagram-panel-preview line,
+.md-diagram-panel-preview path.path {
+    stroke: var(--border-strong) !important;
+}
+
+.md-diagram-panel-preview marker path {
+    fill: var(--border-strong) !important;
+    stroke: var(--border-strong) !important;
+}
+
+@supports (text-autospace: normal) {
+    #write {
+        text-autospace: normal;
+    }
+}
+
+@supports (text-spacing-trim: normal) {
+    #write {
+        text-spacing-trim: normal;
+    }
+}
+
+/* Wider windows step up like the GitHub theme: 100, then 120 columns of code. */
+@media (min-width: 1400px) {
+    :root {
+        --write-width: 72.5rem;
+    }
+}
+
+@media (min-width: 1800px) {
+    :root {
+        --write-width: 85rem;
+    }
+}
+
+@media (max-width: 760px) {
+    #write {
+        width: 100%;
+        padding: 2rem 1.4rem 7rem;
+        font-size: 1rem;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+}
+
+@media print {
+    :root {
+        color-scheme: light;
+        --bg: #ffffff;
+        --panel: #ffffff;
+        --surface: #ffffff;
+        --surface-strong: #f1f1f1;
+        --text: #000000;
+        --text-muted: #333333;
+        --text-faint: #4d4d4d;
+        --border: #9a9a9a;
+        --border-strong: #333333;
+        --quote: #f5f5f5;
+        --accent: #004c92;
+        --accent-hover: #00376a;
+        --on-accent: #ffffff;
+        --selection: #cce4ff;
+    }
+
+    #write {
+        max-width: none;
+        padding: 0;
+        font-size: 11pt;
+    }
+
+    /* Fits 80 columns of code on A4 with Typora's default 16mm side margins. */
+    pre.md-fences,
+    pre.md-meta-block {
+        font-size: 0.8em;
+    }
+
+    .typora-export,
+    .typora-export-content,
+    #write {
+        background: #ffffff !important;
+        color: #000000 !important;
+    }
+
+    * {
+        box-shadow: none !important;
+        text-shadow: none !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+}

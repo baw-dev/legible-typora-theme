@@ -1,0 +1,45 @@
+/*
+ * Legible Dark for Typora
+ * Legible with a dark palette on screen. It prints on white, like Legible.
+ * https://github.com/baw-dev/legible-typora-theme
+ */
+
+@import "legible.css";
+
+/* Typora only reads this from the theme file it loaded, so it is repeated here. */
+@include-when-export url(https://fonts.bunny.net/css?family=b612:400,400i,700,700i|b612-mono:400,400i,700,700i|lato:400,700,900&display=swap);
+
+@media screen {
+    :root {
+        color-scheme: dark;
+
+        --bg: #0b0d10;
+        --surface: #15191e;
+        --surface-strong: #20262d;
+        --panel: #101318;
+        --text: #f6f7f9;
+        --text-muted: #c3cad3;
+        --text-faint: #9aa5b1;
+        --border: #56616d;
+        --border-strong: #9aa5b1;
+        --accent: #8ec5ff;
+        --accent-hover: #c9e4ff;
+        --accent-soft: #183757;
+        --on-accent: #07131f;
+        --selection: #4f9cdb;
+        --focus: #73baff;
+        --quote: #151c23;
+        --danger: #ff9da6;
+        --success: #85d79d;
+        --warning: #ffd181;
+        --important: #d5b1ff;
+        --code-keyword: #d8b2ff;
+        --code-string: #9bdfa8;
+        --code-number: #ffc080;
+        --code-type: #8edee5;
+        --shadow: 0 16px 38px rgba(0, 0, 0, 0.55);
+
+        --select-text-font-color: #07131f;
+        --mermaid-theme: dark;
+    }
+}
