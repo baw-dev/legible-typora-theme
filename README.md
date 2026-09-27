@@ -36,8 +36,11 @@ The fonts come with the theme. Tested with Typora 1.12 on macOS.
 ## Room for code
 
 Code blocks fit 80 columns. Wider windows fit 100 columns (from 1400 px) and 120
-(from 1800 px), and tables widen with them. PDFs print on white, with 80-column
-code on A4 and Letter.
+(from 1800 px), and tables widen with them. Box-drawing and block characters stay
+on the grid. PDFs print on white, with 80-column code on A4 and Letter.
+
+Typora won't send a dark theme to the printer, so from Legible Dark choose
+**Export to PDF**, which comes out the same as Legible.
 
 Open `sample.md` to see every element.
 

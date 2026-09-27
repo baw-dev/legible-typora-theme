@@ -71,6 +71,29 @@
     font-display: swap;
 }
 
+/* B612 Mono has no box-drawing, block or shade characters (─ █ ▒). These faces borrow them from
+   a system monospace font, scaled to B612 Mono's 0.65em advance so columns stay aligned. */
+@font-face {
+    font-family: "Legible Mono Menlo";
+    src: local("Menlo Regular"), local("Menlo-Regular");
+    font-weight: 100 900;
+    size-adjust: 107.964%;
+}
+
+@font-face {
+    font-family: "Legible Mono Consolas";
+    src: local("Consolas");
+    font-weight: 100 900;
+    size-adjust: 118.224%;
+}
+
+@font-face {
+    font-family: "Legible Mono DejaVu";
+    src: local("DejaVu Sans Mono"), local("DejaVuSansMono");
+    font-weight: 100 900;
+    size-adjust: 107.964%;
+}
+
 @font-face {
     font-family: "Lato";
     src: url("./legible/Lato-Regular.ttf") format("truetype");
@@ -128,7 +151,7 @@
 
     --font-body: "B612", Arial, sans-serif;
     --font-heading: "Lato", Arial, sans-serif;
-    --font-mono: "B612 Mono", "SFMono-Regular", Consolas, monospace;
+    --font-mono: "B612 Mono", "Legible Mono Menlo", "Legible Mono Consolas", "Legible Mono DejaVu", monospace;
 
     /* Writing-area width. Code blocks fit 80 columns of B612 Mono here;
        the wider-window steps below fit 100 and 120. */
