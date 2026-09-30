@@ -1,0 +1,1553 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'><style type='text/css'>html {overflow-x: initial !important;}</style>
+<style type='text/css'  id="style-mermaid">:root { --mermaid-theme: default; --mermaid-sequence-numbers: off; --mermaid-flowchart-curve: linear; --mermaid--gantt-left-padding: 75; --sequence-theme: simple; }
+.privacy { display: none; }
+
+</style>
+<style type='text/css'  id="style-base">:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
+.mac-os-11 { --title-bar-height: 28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, "Segoe UI Emoji", "SF Pro", sans-serif; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, h5 { white-space: pre-wrap; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.428571; overflow-x: hidden; background: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p *, #write.first-line-indent svg * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font-style: inherit; font-variant-caps: inherit; font-weight: inherit; font-width: inherit; font-size: inherit; line-height: inherit; font-family: inherit; font-size-adjust: inherit; font-kerning: inherit; font-variant-alternates: inherit; font-variant-ligatures: inherit; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-variant-position: inherit; font-variant-emoji: inherit; font-feature-settings: inherit; font-optical-sizing: inherit; font-variation-settings: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; position: relative; }
+#write svg h1, #write svg h2, #write svg h3, #write svg h4, #write svg h5, #write svg h6, #write svg p { position: static; }
+svg sub, svg sup { position: static; }
+.nodeLabel p { padding-right: 2px; padding-left: 2px; }
+.typora-export .nodeLabel p { padding-right: 0px; padding-left: 0px; }
+foreignObject { overflow: visible; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+li p { orphans: 1; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right-width: 0px; border-right-style: none; border-right-color: currentcolor; background-color: inherit; }
+.CodeMirror-linenumber { -webkit-user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; border-color: transparent !important; padding-top: 0px !important; padding-bottom: 0px !important; }
+  .typora-export * { print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  #write > p:nth-child(1) { margin-top: 0px; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+  figure { overflow-x: visible; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: medium; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: medium !important; border-style: none !important; border-color: currentcolor !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom-width: 0px; border-bottom-style: none; border-bottom-color: currentcolor; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: medium; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.mermaid-svg { margin: auto; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; overflow-wrap: anywhere; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.428571rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left-width: 28px; border-left-style: solid; border-left-color: transparent; border-right-width: 28px; border-right-style: solid; border-right-color: transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right-width: 8px; border-right-style: solid; border-right-color: transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+.md-alert.md-alert-note { border-left-color: rgb(9, 105, 218); }
+.md-alert.md-alert-important { border-left-color: rgb(130, 80, 223); }
+.md-alert.md-alert-warning { border-left-color: rgb(154, 103, 0); }
+.md-alert.md-alert-tip { border-left-color: rgb(31, 136, 61); }
+.md-alert.md-alert-caution { border-left-color: rgb(207, 34, 46); }
+.md-alert { padding: 0px 1em; margin-bottom: 16px; color: inherit; border-left-width: 0.25em; border-left-style: solid; border-left-color: rgb(0, 0, 0); }
+.md-alert-text-note { color: rgb(9, 105, 218); }
+.md-alert-text-important { color: rgb(130, 80, 223); }
+.md-alert-text-warning { color: rgb(154, 103, 0); }
+.md-alert-text-tip { color: rgb(31, 136, 61); }
+.md-alert-text-caution { color: rgb(207, 34, 46); }
+.md-alert-text { font-size: 0.9rem; font-weight: 700; }
+.md-alert-text svg { fill: currentcolor; position: relative; top: 0.125em; margin-right: 1ch; overflow: visible; }
+.md-alert-text-container::after { content: attr(data-text); text-transform: capitalize; pointer-events: none; margin-right: 1ch; }
+
+</style>
+<style type='text/css'  id="style-codemirror">.CodeMirror { height: auto; }
+.CodeMirror.cm-s-inner { background: inherit; }
+.CodeMirror-scroll { overflow: auto hidden; z-index: 3; }
+.CodeMirror-gutter-filler, .CodeMirror-scrollbar-filler { background-color: rgb(255, 255, 255); }
+.CodeMirror-gutters { border-right-width: 1px; border-right-style: solid; border-right-color: rgb(221, 221, 221); background: inherit; white-space: nowrap; }
+.CodeMirror-linenumber { padding: 0px 3px 0px 5px; text-align: right; color: rgb(153, 153, 153); }
+.cm-s-inner .cm-keyword { color: rgb(119, 0, 136); }
+.cm-s-inner .cm-atom, .cm-s-inner.cm-atom { color: rgb(34, 17, 153); }
+.cm-s-inner .cm-number { color: rgb(17, 102, 68); }
+.cm-s-inner .cm-def { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-variable { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-variable-2 { color: rgb(0, 85, 170); }
+.cm-s-inner .cm-variable-3 { color: rgb(0, 136, 85); }
+.cm-s-inner .cm-string { color: rgb(170, 17, 17); }
+.cm-s-inner .cm-property { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-operator { color: rgb(152, 26, 26); }
+.cm-s-inner .cm-comment, .cm-s-inner.cm-comment { color: rgb(170, 85, 0); }
+.cm-s-inner .cm-string-2 { color: rgb(255, 85, 0); }
+.cm-s-inner .cm-meta { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-qualifier { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-builtin { color: rgb(51, 0, 170); }
+.cm-s-inner .cm-bracket { color: rgb(153, 153, 119); }
+.cm-s-inner .cm-tag { color: rgb(17, 119, 0); }
+.cm-s-inner .cm-attribute { color: rgb(0, 0, 204); }
+.cm-s-inner .cm-header, .cm-s-inner.cm-header { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-quote, .cm-s-inner.cm-quote { color: rgb(0, 153, 0); }
+.cm-s-inner .cm-hr, .cm-s-inner.cm-hr { color: rgb(153, 153, 153); }
+.cm-s-inner .cm-link, .cm-s-inner.cm-link { color: rgb(0, 0, 204); }
+.cm-negative { color: rgb(221, 68, 68); }
+.cm-positive { color: rgb(34, 153, 34); }
+.cm-header, .cm-strong { font-weight: 700; }
+.cm-del { text-decoration: line-through; }
+.cm-em { font-style: italic; }
+.cm-link { text-decoration: underline; }
+.cm-error { color: red; }
+.cm-invalidchar { color: red; }
+.cm-constant { color: rgb(38, 139, 210); }
+.cm-defined { color: rgb(181, 137, 0); }
+div.CodeMirror span.CodeMirror-matchingbracket { color: rgb(0, 255, 0); }
+div.CodeMirror span.CodeMirror-nonmatchingbracket { color: rgb(255, 34, 34); }
+.cm-s-inner .CodeMirror-activeline-background { background: inherit; }
+.CodeMirror { position: relative; overflow: hidden; }
+.CodeMirror-scroll { height: 100%; outline: 0px; position: relative; box-sizing: content-box; background: inherit; }
+.CodeMirror-sizer { position: relative; }
+.CodeMirror-gutter-filler, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-vscrollbar { position: absolute; z-index: 6; display: none; outline: 0px; }
+.CodeMirror-vscrollbar { right: 0px; top: 0px; overflow: hidden; }
+.CodeMirror-hscrollbar { bottom: 0px; left: 0px; overflow: auto hidden; }
+.CodeMirror-scrollbar-filler { right: 0px; bottom: 0px; }
+.CodeMirror-gutter-filler { left: 0px; bottom: 0px; }
+.CodeMirror-gutters { position: absolute; left: 0px; top: 0px; padding-bottom: 10px; z-index: 3; overflow-y: hidden; }
+.CodeMirror-gutter { white-space: normal; height: 100%; box-sizing: content-box; padding-bottom: 30px; margin-bottom: -32px; display: inline-block; }
+.CodeMirror-gutter-wrapper { position: absolute; z-index: 4; background: 0px 0px !important; border: medium !important; }
+.CodeMirror-gutter-background { position: absolute; top: 0px; bottom: 0px; z-index: 4; }
+.CodeMirror-gutter-elt { position: absolute; cursor: default; z-index: 4; }
+.CodeMirror-lines { cursor: text; }
+.CodeMirror pre { border-radius: 0px; border-width: 0px; background: 0px 0px; font-family: inherit; font-size: inherit; margin: 0px; white-space: pre; overflow-wrap: normal; color: inherit; z-index: 2; position: relative; overflow: visible; }
+.CodeMirror-wrap pre { overflow-wrap: break-word; white-space: pre-wrap; word-break: normal; }
+.CodeMirror-code pre { border-right-width: 30px; border-right-style: solid; border-right-color: transparent; width: fit-content; }
+.CodeMirror-wrap .CodeMirror-code pre { border-right-width: medium; border-right-style: none; border-right-color: currentcolor; width: auto; }
+.CodeMirror-linebackground { position: absolute; inset: 0px; z-index: 0; }
+.CodeMirror-linewidget { position: relative; z-index: 2; overflow: auto; }
+.CodeMirror-wrap .CodeMirror-scroll { overflow-x: hidden; }
+.CodeMirror-measure { position: absolute; width: 100%; height: 0px; overflow: hidden; visibility: hidden; }
+.CodeMirror-measure pre { position: static; }
+.CodeMirror div.CodeMirror-cursor { position: absolute; visibility: hidden; border-right-width: medium; border-right-style: none; border-right-color: currentcolor; width: 0px; }
+.CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+.CodeMirror-focused div.CodeMirror-cursor { visibility: inherit; }
+.cm-searching { background: rgba(255, 255, 0, 0.4); }
+span.cm-underlined { text-decoration: underline; }
+span.cm-strikethrough { text-decoration: line-through; }
+.cm-tw-syntaxerror { color: rgb(255, 255, 255); background-color: rgb(153, 0, 0); }
+.cm-tw-deleted { text-decoration: line-through; }
+.cm-tw-header5 { font-weight: 700; }
+.cm-tw-listitem:first-child { padding-left: 10px; }
+.cm-tw-box { border-style: solid; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-color: inherit; border-top-width: 0px !important; }
+.cm-tw-underline { text-decoration: underline; }
+@media print {
+  .CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+}
+
+</style>
+<style type='text/css'  id="style-theme_css">/*
+ * Legible for Typora
+ * A high-contrast theme set in B612, the Airbus cockpit typeface.
+ * https://github.com/baw-dev/legible-typora-theme
+ */
+
+
+/* B612 Mono has no box-drawing, block or shade characters (─ █ ▒). These faces borrow them from
+   a system monospace font, scaled to B612 Mono's 0.65em advance so columns stay aligned. */
+@font-face {
+    font-family: "B612";
+    src: url("./legible/B612-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "B612";
+    src: url("./legible/B612-Italic.ttf") format("truetype");
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "B612";
+    src: url("./legible/B612-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "B612";
+    src: url("./legible/B612-BoldItalic.ttf") format("truetype");
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "B612 Mono";
+    src: url("./legible/B612Mono-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "B612 Mono";
+    src: url("./legible/B612Mono-Italic.ttf") format("truetype");
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "B612 Mono";
+    src: url("./legible/B612Mono-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "B612 Mono";
+    src: url("./legible/B612Mono-BoldItalic.ttf") format("truetype");
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* B612 Mono has no box-drawing, block or shade characters (─ █ ▒). These faces borrow them from
+   a system monospace font, scaled to B612 Mono's 0.65em advance so columns stay aligned. */
+@font-face {
+    font-family: "Legible Mono Menlo";
+    src: local("Menlo Regular"), local("Menlo-Regular");
+    font-weight: 100 900;
+    size-adjust: 107.964%;
+}
+
+@font-face {
+    font-family: "Legible Mono Consolas";
+    src: local("Consolas");
+    font-weight: 100 900;
+    size-adjust: 118.224%;
+}
+
+@font-face {
+    font-family: "Legible Mono DejaVu";
+    src: local("DejaVu Sans Mono"), local("DejaVuSansMono");
+    font-weight: 100 900;
+    size-adjust: 107.964%;
+}
+
+@font-face {
+    font-family: "Lato";
+    src: url("./legible/Lato-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Lato";
+    src: url("./legible/Lato-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Lato";
+    src: url("./legible/Lato-Black.ttf") format("truetype");
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    color-scheme: light;
+
+    --bg: #ffffff;
+    --surface: #f6f7f8;
+    --surface-strong: #eceff2;
+    --panel: #ffffff;
+    --text: #17191c;
+    --text-muted: #48515b;
+    --text-faint: #4a545f;
+    --border: #848990;
+    --border-strong: #747e89;
+    --accent: #0052a2;
+    --accent-hover: #003f7d;
+    --accent-soft: #dcecff;
+    --on-accent: #ffffff;
+    --selection: var(--accent);
+    --focus: #006ed3;
+    --quote: #f2f6fa;
+    --mark: #ffdf6b;
+    --mark-edge: #9a6a00;
+    --danger: #a2192b;
+    --success: #0d5f2f;
+    --warning: #734a00;
+    --important: #673a8e;
+    --code-keyword: #6c2a91;
+    --code-string: #235f1d;
+    --code-number: #893d00;
+    --code-type: #005b6f;
+    --shadow: 0 12px 32px rgba(18, 24, 31, 0.16);
+
+    --font-body: "B612", Arial, sans-serif;
+    --font-heading: "Lato", Arial, sans-serif;
+    --font-mono: "B612 Mono", "Legible Mono Menlo", "Legible Mono Consolas", "Legible Mono DejaVu", monospace;
+
+    /* Writing-area width. Code blocks fit 80 columns of B612 Mono here;
+       the wider-window steps below fit 100 and 120. */
+    --write-width: 60rem;
+
+    /* One rhythm for every block, one shape for every box. */
+    --space-block: 1.5em;
+    --radius: 0.4rem;
+    --radius-small: 0.25rem;
+
+    /* Typora-recognized theme variables. */
+    --bg-color: var(--bg);
+    --text-color: var(--text);
+    --side-bar-bg-color: var(--panel);
+    --control-text-color: var(--text-muted);
+    --primary-color: var(--accent);
+    --primary-btn-border-color: var(--accent);
+    --primary-btn-text-color: var(--on-accent);
+    --active-file-bg-color: var(--accent-soft);
+    --active-file-text-color: var(--text);
+    --active-file-border-color: var(--accent);
+    --item-hover-bg-color: var(--surface-strong);
+    --item-hover-text-color: var(--text);
+    --window-border: 1px solid var(--border);
+    --select-text-bg-color: var(--selection);
+    --select-text-font-color: var(--on-accent);
+    --search-select-bg-color: #ffbd38;
+    --search-select-text-color: #111111;
+    --rawblock-edit-panel-bd: var(--surface);
+    --mermaid-theme: neutral;
+    --mermaid-font-family: var(--font-heading);
+}
+
+html {
+    font-size: 16px;
+    background: var(--bg);
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+html,
+body,
+#typora-sidebar,
+#typora-source {
+    background-color: var(--bg);
+}
+
+::selection {
+    color: var(--select-text-font-color);
+    background: var(--select-text-bg-color);
+}
+
+#write {
+    box-sizing: border-box;
+    width: min(100%, var(--write-width));
+    max-width: var(--write-width);
+    margin: 0 auto;
+    padding: 3.75rem 2rem 10rem;
+    color: var(--text);
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    overflow-wrap: anywhere;
+    caret-color: var(--text);
+}
+
+#write > :first-child {
+    margin-top: 0;
+}
+
+#typora-source .CodeMirror-lines {
+    max-width: var(--write-width);
+}
+
+p {
+    margin: 0 0 1em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--text);
+    font-family: var(--font-heading);
+    line-height: 1.22;
+    letter-spacing: 0.005em;
+    page-break-after: avoid;
+}
+
+h1 {
+    margin: 0 0 1.25em;
+    font-size: 2.35em;
+    font-weight: 900;
+    letter-spacing: -0.025em;
+}
+
+h2 {
+    margin: 2.2em 0 0.65em;
+    padding-bottom: 0.24em;
+    border-bottom: 2px solid var(--border-strong);
+    font-size: 1.7em;
+    font-weight: 900;
+    letter-spacing: -0.015em;
+}
+
+h3 {
+    margin: 1.85em 0 0.55em;
+    font-size: 1.35em;
+    font-weight: 900;
+}
+
+h4 {
+    margin: 1.6em 0 0.45em;
+    font-size: 1.12em;
+    font-weight: 700;
+}
+
+h5,
+h6 {
+    margin: 1.4em 0 0.4em;
+    font-size: 1em;
+    font-weight: 700;
+}
+
+h6 {
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+strong,
+b {
+    font-weight: 700;
+}
+
+a {
+    color: var(--accent);
+    text-decoration: underline;
+    text-decoration-thickness: 0.09em;
+    text-underline-offset: 0.15em;
+}
+
+a:hover {
+    color: var(--accent-hover);
+    text-decoration-thickness: 0.14em;
+}
+
+/* Important, so Typora's own outline resets can't hide keyboard focus. The editor keeps its caret. */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:not(#write):focus-visible {
+    outline: 3px solid var(--focus) !important;
+    outline-offset: 2px !important;
+}
+
+/* The edge marks highlights without relying on color alone. */
+mark {
+    padding: 0.03em 0.14em;
+    border-radius: var(--radius-small);
+    background: var(--mark);
+    color: #151515;
+    box-shadow: inset 0 0 0 1px var(--mark-edge);
+}
+
+hr {
+    height: 0;
+    margin: calc(var(--space-block) * 2) 0;
+    border: 0;
+    border-top: 2px solid var(--border-strong);
+}
+
+blockquote {
+    margin: var(--space-block) 0;
+    padding: 1em 1.25em;
+    border-left: 0.35rem solid var(--border-strong);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    background: var(--quote);
+    color: var(--text-muted);
+}
+
+blockquote > :last-child {
+    margin-bottom: 0;
+}
+
+/* Typora draws GitHub alerts as div.md-alert; they share the quote's look. */
+.md-alert {
+    margin: var(--space-block) 0;
+    padding: 1em 1.25em;
+    border-left: 0.35rem solid var(--accent);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    background: var(--quote);
+    color: var(--text);
+}
+
+.md-alert > :last-child {
+    margin-bottom: 0;
+}
+
+/* The label is the text itself in exports and an ::after in the editor. */
+.md-alert-text,
+.md-alert-text-container::after {
+    font-family: var(--font-heading);
+    font-weight: 900;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.md-alert.md-alert-note {
+    border-left-color: var(--accent);
+}
+
+.md-alert.md-alert-tip {
+    border-left-color: var(--success);
+}
+
+.md-alert.md-alert-important {
+    border-left-color: var(--important);
+}
+
+.md-alert.md-alert-warning {
+    border-left-color: var(--warning);
+}
+
+.md-alert.md-alert-caution {
+    border-left-color: var(--danger);
+}
+
+.md-alert-text-note {
+    color: var(--accent);
+}
+
+.md-alert-text-tip {
+    color: var(--success);
+}
+
+.md-alert-text-important {
+    color: var(--important);
+}
+
+.md-alert-text-warning {
+    color: var(--warning);
+}
+
+.md-alert-text-caution {
+    color: var(--danger);
+}
+
+ul,
+ol {
+    margin: 0.65em 0 1.1em;
+    padding-left: 1.8em;
+}
+
+li {
+    margin: 0.25em 0;
+    padding-left: 0.18em;
+}
+
+li::marker {
+    color: var(--text-muted);
+    font-weight: 700;
+}
+
+ul.task-list {
+    padding-left: 1.5em;
+}
+
+li.task-list-item {
+    list-style: none;
+}
+
+/* #write outranks Typora's own "#write input" rule, which otherwise resets the size. */
+#write li.task-list-item > input[type="checkbox"] {
+    width: 1rem;
+    height: 1rem;
+    margin: 0 0.55em 0 -1.45em;
+    accent-color: var(--accent);
+    transform: translateY(0.12em);
+}
+
+code,
+tt,
+pre,
+#typora-source {
+    font-family: var(--font-mono);
+}
+
+code,
+tt {
+    padding: 0.1em 0.34em;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-small);
+    background: var(--surface);
+    color: var(--text);
+    font-size: 0.91em;
+}
+
+pre.md-fences,
+pre.md-meta-block {
+    margin: var(--space-block) 0;
+    padding: 1.05em 1.2em;
+    overflow-x: auto;
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius);
+    background: var(--surface);
+    color: var(--text);
+    font-size: 0.9em;
+    line-height: 1.55;
+    text-align: left;
+    tab-size: 4;
+    hyphens: none;
+}
+
+pre.md-fences code {
+    padding: 0;
+    border: 0;
+    background: transparent;
+}
+
+pre.md-fences .CodeMirror,
+pre.md-fences .CodeMirror-scroll,
+pre.md-fences .CodeMirror-gutters,
+.cm-s-inner,
+.cm-s-typora-default {
+    background: var(--surface);
+    color: var(--text);
+    font-family: var(--font-mono);
+}
+
+.CodeMirror-cursor,
+.cm-fat-cursor {
+    border-left-color: var(--text) !important;
+}
+
+.CodeMirror-selected,
+.CodeMirror-selectedtext,
+.cm-s-inner div.CodeMirror-selected,
+.cm-s-typora-default div.CodeMirror-selected {
+    background: var(--selection) !important;
+    color: var(--select-text-font-color) !important;
+}
+
+/* Every token class gets a theme color; Typora's light-theme defaults would show through otherwise. */
+.cm-variable,
+.cm-code {
+    color: var(--text) !important;
+}
+
+.cm-operator,
+.cm-bracket,
+.cm-hr,
+.cm-quote {
+    color: var(--text-muted) !important;
+}
+
+.cm-keyword,
+.cm-tag,
+.cm-attribute,
+.cm-property,
+.cm-def,
+.cm-builtin,
+.cm-qualifier,
+.cm-header {
+    color: var(--code-keyword) !important;
+}
+
+.cm-string,
+.cm-string-2 {
+    color: var(--code-string) !important;
+}
+
+.cm-number,
+.cm-atom,
+.cm-constant {
+    color: var(--code-number) !important;
+}
+
+.cm-type,
+.cm-variable-2,
+.cm-variable-3,
+.cm-defined {
+    color: var(--code-type) !important;
+}
+
+.cm-comment,
+.cm-meta {
+    color: var(--text-faint) !important;
+    font-style: italic;
+}
+
+.cm-link {
+    color: var(--accent) !important;
+}
+
+.cm-positive {
+    color: var(--success) !important;
+}
+
+.cm-negative,
+.cm-error,
+.cm-invalidchar {
+    color: var(--danger) !important;
+    background: transparent !important;
+}
+
+/* A pattern as well as a color, so errors and bracket pairs don't rely on color alone. */
+.cm-error,
+.cm-invalidchar {
+    text-decoration: underline wavy;
+    text-decoration-skip-ink: none;
+}
+
+div.CodeMirror span.CodeMirror-matchingbracket {
+    color: var(--success) !important;
+    text-decoration: underline;
+}
+
+div.CodeMirror span.CodeMirror-nonmatchingbracket {
+    color: var(--danger) !important;
+    text-decoration: underline wavy;
+}
+
+/* Search hits in code look like hits in prose. */
+.cm-search-hit {
+    background: var(--mark) !important;
+    color: #151515 !important;
+    box-shadow: inset 0 -2px 0 var(--mark-edge);
+}
+
+/* Typora wraps each table in a figure. */
+#write figure {
+    margin: var(--space-block) 0;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border: 1px solid var(--border-strong);
+    border-collapse: collapse;
+    background: var(--panel);
+    font-size: 0.95em;
+}
+
+th,
+td {
+    padding: 0.65em 0.8em;
+    border: 1px solid var(--border);
+    text-align: left;
+    vertical-align: top;
+}
+
+th {
+    border-bottom-color: var(--border-strong);
+    background: var(--surface-strong);
+    font-family: var(--font-heading);
+    font-weight: 700;
+}
+
+tbody tr:nth-child(even) td {
+    background: var(--surface);
+}
+
+kbd {
+    padding: 0.12em 0.42em;
+    border: 1px solid var(--border-strong);
+    border-bottom-width: 2px;
+    border-radius: var(--radius-small);
+    background: var(--surface);
+    color: var(--text);
+    font-family: var(--font-mono);
+    font-size: 0.86em;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    margin: var(--space-block) auto;
+}
+
+.md-image > .md-meta,
+.md-meta,
+.md-content {
+    color: var(--text-faint);
+    font-family: var(--font-mono);
+}
+
+.md-math-block,
+.md-inline-math,
+.mathjax-block,
+.mathjax-block .md-math-container {
+    color: var(--text);
+}
+
+.mathjax-block .md-mathblock-panel,
+.md-htmlblock:hover > .md-rawblock-container,
+.md-htmlblock.md-rawblock-on-edit > .md-rawblock-container {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--surface);
+    color: var(--text);
+    box-shadow: none;
+}
+
+.md-htmlblock .CodeMirror,
+.md-htmlblock .CodeMirror-scroll,
+.md-htmlblock .CodeMirror-lines,
+.md-htmlblock .CodeMirror-gutters,
+.md-htmlblock .md-rawblock-input,
+.md-htmlblock .md-rawblock-tooltip {
+    background: var(--surface);
+    color: var(--text);
+    font-family: var(--font-mono);
+}
+
+.md-search-hit {
+    border-radius: var(--radius-small);
+    background: var(--mark);
+    color: #151515 !important;
+    box-shadow: inset 0 -2px 0 var(--mark-edge);
+}
+
+.md-search-select {
+    border-radius: var(--radius-small);
+    background: var(--search-select-bg-color);
+    color: var(--search-select-text-color) !important;
+    box-shadow: 0 0 0 2px var(--focus);
+}
+
+sup.md-footnote {
+    color: var(--accent);
+    background: transparent;
+}
+
+/* Footnotes are div.footnotes in the editor and .footnotes-area in exports; Typora fades both. */
+.footnotes,
+.footnotes-area {
+    color: var(--text-muted);
+    font-size: 0.9em;
+    opacity: 1;
+}
+
+.footnote-line {
+    font-size: inherit;
+}
+
+.md-toc {
+    margin: var(--space-block) 0;
+    padding: 1em 1.25em;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--surface);
+    color: var(--text-muted);
+    font-family: var(--font-heading);
+}
+
+/* Application chrome */
+#typora-sidebar {
+    border-right: 1px solid var(--border);
+    background: var(--panel);
+    color: var(--text-muted);
+    font-family: var(--font-heading);
+    font-size: 0.92rem;
+}
+
+#typora-sidebar .file-node-content,
+#typora-sidebar .outline-item,
+#typora-sidebar .ty-sidebar-footer {
+    border-radius: var(--radius-small);
+}
+
+#typora-sidebar .file-node-content:hover,
+#typora-sidebar .outline-item:hover,
+#typora-sidebar .ty-sidebar-footer-item:hover {
+    background: var(--item-hover-bg-color);
+    color: var(--item-hover-text-color);
+}
+
+#typora-sidebar .active,
+#typora-sidebar .file-node.active > .file-node-content,
+#typora-sidebar .outline-item.active {
+    background: var(--active-file-bg-color);
+    color: var(--active-file-text-color);
+    box-shadow: inset 3px 0 0 var(--active-file-border-color);
+    font-weight: 700;
+}
+
+.dropdown-menu,
+.context-menu,
+.popover,
+.modal-content,
+.dialog,
+.auto-suggest-container,
+#md-searchpanel,
+.megamenu-content,
+.ty-preferences,
+.ty-preferences-panel {
+    border: 1px solid var(--border) !important;
+    background: var(--panel) !important;
+    color: var(--text) !important;
+    box-shadow: var(--shadow);
+    font-family: var(--font-heading);
+}
+
+.dropdown-menu li > a,
+.context-menu li > a,
+.auto-suggest-container li,
+.typora-quick-open-item {
+    color: var(--text) !important;
+}
+
+.dropdown-menu li > a:hover,
+.context-menu li > a:hover,
+.auto-suggest-container li:hover,
+.auto-suggest-container li.active,
+.typora-quick-open-item:hover,
+.typora-quick-open-item.active {
+    background: var(--surface-strong) !important;
+}
+
+.btn,
+.dialog .btn,
+.modal-content .btn,
+.popover .btn {
+    border: 1px solid var(--border-strong);
+    background: var(--panel);
+    color: var(--text);
+    box-shadow: none;
+    font-family: var(--font-heading);
+    font-weight: 700;
+}
+
+.btn:hover {
+    background: var(--surface-strong);
+}
+
+.btn-primary {
+    border-color: var(--accent) !important;
+    background: var(--accent) !important;
+    color: var(--on-accent) !important;
+}
+
+input,
+select,
+textarea {
+    border: 1px solid var(--border-strong) !important;
+    background: var(--surface) !important;
+    color: var(--text) !important;
+    font-family: var(--font-heading);
+}
+
+.tooltip-inner,
+.ty-tooltip,
+.code-tooltip.md-hover-tip.md-f-tooltip {
+    border: 1px solid var(--border);
+    background: var(--panel);
+    color: var(--text);
+    box-shadow: var(--shadow);
+    font-family: var(--font-heading);
+}
+
+/* Diagrams inherit the same high-contrast palette. */
+.md-diagram-panel-preview text,
+.md-diagram-panel-preview tspan,
+.md-diagram-panel-preview .label,
+.md-diagram-panel-preview .nodeLabel,
+.md-diagram-panel-preview .edgeLabel {
+    fill: var(--text) !important;
+    color: var(--text) !important;
+    font-family: var(--font-heading) !important;
+}
+
+.md-diagram-panel-preview .node rect,
+.md-diagram-panel-preview .node circle,
+.md-diagram-panel-preview .node ellipse,
+.md-diagram-panel-preview .node polygon {
+    fill: var(--surface) !important;
+    stroke: var(--border-strong) !important;
+}
+
+.md-diagram-panel-preview .edgePath path,
+.md-diagram-panel-preview .flowchart-link,
+.md-diagram-panel-preview line,
+.md-diagram-panel-preview path.path {
+    stroke: var(--border-strong) !important;
+}
+
+.md-diagram-panel-preview marker path {
+    fill: var(--border-strong) !important;
+    stroke: var(--border-strong) !important;
+}
+
+@supports (text-autospace: normal) {
+    #write {
+        text-autospace: normal;
+    }
+}
+
+@supports (text-spacing-trim: normal) {
+    #write {
+        text-spacing-trim: normal;
+    }
+}
+
+/* Wider windows step up like the GitHub theme: 100, then 120 columns of code. */
+@media (min-width: 1400px) {
+    :root {
+        --write-width: 72.5rem;
+    }
+}
+
+@media (min-width: 1800px) {
+    :root {
+        --write-width: 85rem;
+    }
+}
+
+@media (max-width: 760px) {
+    #write {
+        width: 100%;
+        padding: 2rem 1.4rem 7rem;
+        font-size: 1rem;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+}
+
+/* Respect the system's reduce-motion setting; near-zero durations still fire end events. */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+@media print {
+    :root {
+        color-scheme: light;
+        --bg: #ffffff;
+        --panel: #ffffff;
+        --surface: #ffffff;
+        --surface-strong: #f1f1f1;
+        --text: #000000;
+        --text-muted: #333333;
+        --text-faint: #4d4d4d;
+        --border: #8a8a8a;
+        --border-strong: #333333;
+        --quote: #f5f5f5;
+        --accent: #004c92;
+        --accent-hover: #00376a;
+        --on-accent: #ffffff;
+    }
+
+    #write {
+        max-width: none;
+        padding: 0;
+        font-size: 11pt;
+    }
+
+    /* Fits 80 columns of code on A4 with Typora's default 16mm side margins. */
+    pre.md-fences,
+    pre.md-meta-block {
+        font-size: 0.8em;
+    }
+
+    .typora-export,
+    .typora-export-content,
+    #write {
+        background: #ffffff !important;
+        color: #000000 !important;
+    }
+
+    * {
+        box-shadow: none !important;
+        text-shadow: none !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    mark {
+        box-shadow: inset 0 0 0 1px var(--mark-edge) !important;
+    }
+
+    /* Keep lines, boxes and rows together across page breaks. */
+    p,
+    li {
+        orphans: 3;
+        widows: 3;
+    }
+
+    blockquote,
+    .md-alert,
+    pre.md-fences,
+    img,
+    tr,
+    .md-toc,
+    .md-math-block {
+        break-inside: avoid;
+    }
+}
+/*
+ * Legible Dark for Typora
+ * Legible with a dark palette on screen. It prints on white, like Legible.
+ * https://github.com/baw-dev/legible-typora-theme
+ */
+
+@import "";
+
+
+@media screen {
+    :root[data-theme="dark"] {
+        color-scheme: dark;
+
+        --bg: #0b0d10;
+        --surface: #15191e;
+        --surface-strong: #20262d;
+        --panel: #101318;
+        --text: #f6f7f9;
+        --text-muted: #c3cad3;
+        --text-faint: #9aa5b1;
+        --border: #66717d;
+        --border-strong: #9aa5b1;
+        --accent: #8ec5ff;
+        --accent-hover: #c9e4ff;
+        --accent-soft: #183757;
+        --on-accent: #07131f;
+        --focus: #73baff;
+        --quote: #151c23;
+        --danger: #ff9da6;
+        --success: #85d79d;
+        --warning: #ffd181;
+        --important: #d5b1ff;
+        --code-keyword: #d8b2ff;
+        --code-string: #9bdfa8;
+        --code-number: #ffc080;
+        --code-type: #8edee5;
+        --shadow: 0 16px 38px rgba(0, 0, 0, 0.55);
+
+        --mermaid-theme: dark;
+    }
+}
+</style>
+<style type='text/css'  id="style-mathjax">
+mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+  min-height: 1px;
+  min-width: 1px;
+}
+
+mjx-container[jax="SVG"] > svg a {
+  fill: blue;
+  stroke: blue;
+}
+
+mjx-assistive-mml {
+  position: absolute !important;
+  top: 0px;
+  left: 0px;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 1px 0px 0px 0px !important;
+  border: 0px !important;
+  display: block !important;
+  width: auto !important;
+  overflow: hidden !important;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+mjx-assistive-mml[display="block"] {
+  width: 100% !important;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][display="true"][width="full"] {
+  display: flex;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line], svg[data-table] > g > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame], svg[data-table] > g > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed, svg[data-table] > g > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted, svg[data-table] > g > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > g > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+mjx-container[jax="SVG2"] path[data-c], mjx-container[jax="SVG2"] use[data-c] {
+  stroke-width: 3;
+}
+
+g[data-mml-node="xypic"] path {
+  stroke-width: inherit;
+}
+
+.MathJax g[data-mml-node="xypic"] path {
+  stroke-width: inherit;
+}
+</style>
+<style type='text/css'  id="style-mathjax-ni">mjx-container[jax="SVG"] path[data-c], mjx-container[jax="SVG"] use[data-c] {
+							stroke-width: 0;
+						}</style>
+<style type='text/css'  id="style-lp">ol, ul {padding-left: 40px}</style>
+<style type='text/css'  id="style-mac-print"> @media print { @page {margin: 0 0 0 0;} body.typora-export {padding-left: 0; padding-right: 0;} #write {padding:0;}}</style>
+
+<title>Legible</title>
+<meta name="description" content="Legible, a high-contrast Typora theme set in B612: the sample page, as Typora exports it.">
+<style id="legible-demo">
+#legible-switch { position: fixed; top: 1rem; right: 1rem; z-index: 10; font: 700 0.9rem var(--font-heading); color: var(--on-accent); background: var(--accent); border: 2px solid var(--accent); border-radius: var(--radius); padding: 0.45rem 0.8rem; cursor: pointer; }
+#legible-switch:hover { background: var(--accent-hover); border-color: var(--accent-hover); }
+#legible-switch:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+@media print { #legible-switch { display: none; } }
+/* Typora's export wraps diagram labels mid-word; keep each on one line. */
+.md-diagram-panel foreignObject p { white-space: nowrap; overflow-wrap: normal; }
+/* The theme styles diagrams in Typora's editor (.md-diagram-panel-preview); the export names the panel .md-diagram-panel. */
+.md-diagram-panel text,
+.md-diagram-panel tspan,
+.md-diagram-panel .label,
+.md-diagram-panel .nodeLabel,
+.md-diagram-panel .edgeLabel {
+    fill: var(--text) !important;
+    color: var(--text) !important;
+    font-family: var(--font-heading) !important;
+}
+
+.md-diagram-panel .node rect,
+.md-diagram-panel .node circle,
+.md-diagram-panel .node ellipse,
+.md-diagram-panel .node polygon {
+    fill: var(--surface) !important;
+    stroke: var(--border-strong) !important;
+}
+
+.md-diagram-panel .edgePath path,
+.md-diagram-panel .flowchart-link,
+.md-diagram-panel line,
+.md-diagram-panel path.path {
+    stroke: var(--border-strong) !important;
+}
+
+.md-diagram-panel marker path {
+    fill: var(--border-strong) !important;
+    stroke: var(--border-strong) !important;
+}
+</style>
+<script>
+(function () {
+  var t = null;
+  try { t = localStorage.getItem('legible-theme'); } catch (e) {}
+  if (!t) t = window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  document.documentElement.setAttribute('data-theme', t);
+})();
+</script>
+</head>
+<body class='typora-export'><div class='typora-export-content'>
+<div id='write'  class=''><h1 id='legible'><span>Legible</span></h1><p><span>Legible is set in </span><strong><span>B612</span></strong><span>, the typeface Airbus commissioned for cockpit screens. Intactile DESIGN drew it in 2012. Its name comes from the Little Prince&#39;s asteroid, in honor of the aviator Antoine de Saint-Exupéry.</span></p><div class='md-toc' mdtype='toc'><p class="md-toc-content" role="list"><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n0"><a class="md-toc-inner" href="#legible">Legible</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n4"><a class="md-toc-inner" href="#made-to-be-read-at-a-glance">Made to be read at a glance</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n24"><a class="md-toc-inner" href="#code">Code</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n28"><a class="md-toc-inner" href="#alerts">Alerts</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n39"><a class="md-toc-inner" href="#column-widths">Column widths</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n41"><a class="md-toc-inner" href="#80-columns">80 columns</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n43"><a class="md-toc-inner" href="#100-columns">100 columns</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n45"><a class="md-toc-inner" href="#120-columns">120 columns</a></span></p></div><h2 id='made-to-be-read-at-a-glance'><span>Made to be read at a glance</span></h2><p><span>B612 follows three rules:</span></p><ol start='' ><li><p><span>Keep every letter true to its basic shape.</span></p></li><li><p><span>Make each letter look as unlike the others as possible.</span></p></li><li><p><span>Give shapes and spaces an even rhythm.</span></p></li></ol><blockquote><p><span>What is essential is invisible to the eye.</span></p><p><span>— Antoine de Saint-Exupéry, </span><em><span>The Little Prince</span></em></p></blockquote><p><span>Text can be </span><strong><span>bold</span></strong><span>, </span><em><span>italic</span></em><span>, </span><mark><span>highlighted</span></mark><span>, </span><code>code</code><span> or a </span><a href='https://github.com/polarsys/b612'><span>link</span></a><span>. Press </span><kbd><span>Ctrl</span></kbd><span> </span><kbd><span>/</span></kbd><span> (</span><kbd><span>⌘</span></kbd><span> </span><kbd><span>/</span></kbd><span> on a Mac) to see this page as markdown.</span></p><ul><li class='md-task-list-item task-list-item task-list-done' ><input type='checkbox' checked/><p><span>Light theme</span></p></li><li class='md-task-list-item task-list-item task-list-done' ><input type='checkbox' checked/><p><span>Dark theme</span></p></li><li class='md-task-list-item task-list-item task-list-not-done' ><input type='checkbox' /><p><span>Your next document</span></p></li></ul><h2 id='code'><span>Code</span></h2><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="python"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="python"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 9.666667px; left: 3.333344px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: currentcolor;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: currentcolor;"><div class="CodeMirror-measure"><span><span>​</span>x</span></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style="text-rendering: auto;"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">KNOT_IN_KMH</span> <span class="cm-operator">=</span> <span class="cm-number">1.852</span> &nbsp;<span class="cm-comment"># exact, by definition</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">def</span> <span class="cm-def">to_kmh</span>(<span class="cm-variable">knots</span>: <span class="cm-builtin">float</span>) <span class="cm-operator">-&gt;</span> <span class="cm-builtin">float</span>:</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-string">"""Convert an airspeed in knots to kilometers per hour."""</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">return</span> <span class="cm-builtin">round</span>(<span class="cm-variable">knots</span> <span class="cm-operator">*</span> <span class="cm-variable">KNOT_IN_KMH</span>, <span class="cm-number">1</span>)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-builtin">print</span>(<span class="cm-variable">to_kmh</span>(<span class="cm-number">250</span>)) &nbsp;<span class="cm-comment"># 463.0</span></span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 210px;"></div><div class="CodeMirror-gutters" style="display: none; height: 210px;"></div></div></div></pre><div contenteditable="false" spellcheck="false" class="mathjax-block md-end-block md-math-block md-rawblock" id="mathjax-n26" cid="n26" mdtype="math_block" data-math-tag-before="0" data-math-tag-after="1" data-math-labels="[]"><div class="md-math-container"><mjx-container class="MathJax" jax="SVG" display="true" width="full" style="min-width: 31.163ex; position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="2.262ex" role="img" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.566ex; min-width: 31.163ex;"><defs><path id="MJX-1-TEX-N-6B" d="M36 46H50Q89 46 97 60V68Q97 77 97 91T97 124T98 167T98 217T98 272T98 329Q98 366 98 407T98 482T98 542T97 586T97 603Q94 622 83 628T38 637H20V660Q20 683 22 683L32 684Q42 685 61 686T98 688Q115 689 135 690T165 693T176 694H179V463L180 233L240 287Q300 341 304 347Q310 356 310 364Q310 383 289 385H284V431H293Q308 428 412 428Q475 428 484 431H489V385H476Q407 380 360 341Q286 278 286 274Q286 273 349 181T420 79Q434 60 451 53T500 46H511V0H505Q496 3 418 3Q322 3 307 0H299V46H306Q330 48 330 65Q330 72 326 79Q323 84 276 153T228 222L176 176V120V84Q176 65 178 59T189 49Q210 46 238 46H254V0H246Q231 3 137 3T28 0H20V46H36Z"></path><path id="MJX-1-TEX-N-6D" d="M41 46H55Q94 46 102 60V68Q102 77 102 91T102 122T103 161T103 203Q103 234 103 269T102 328V351Q99 370 88 376T43 385H25V408Q25 431 27 431L37 432Q47 433 65 434T102 436Q119 437 138 438T167 441T178 442H181V402Q181 364 182 364T187 369T199 384T218 402T247 421T285 437Q305 442 336 442Q351 442 364 440T387 434T406 426T421 417T432 406T441 395T448 384T452 374T455 366L457 361L460 365Q463 369 466 373T475 384T488 397T503 410T523 422T546 432T572 439T603 442Q729 442 740 329Q741 322 741 190V104Q741 66 743 59T754 49Q775 46 803 46H819V0H811L788 1Q764 2 737 2T699 3Q596 3 587 0H579V46H595Q656 46 656 62Q657 64 657 200Q656 335 655 343Q649 371 635 385T611 402T585 404Q540 404 506 370Q479 343 472 315T464 232V168V108Q464 78 465 68T468 55T477 49Q498 46 526 46H542V0H534L510 1Q487 2 460 2T422 3Q319 3 310 0H302V46H318Q379 46 379 62Q380 64 380 200Q379 335 378 343Q372 371 358 385T334 402T308 404Q263 404 229 370Q202 343 195 315T187 232V168V108Q187 78 188 68T191 55T200 49Q221 46 249 46H265V0H257L234 1Q210 2 183 2T145 3Q42 3 33 0H25V46H41Z"></path><path id="MJX-1-TEX-N-2F" d="M423 750Q432 750 438 744T444 730Q444 725 271 248T92 -240Q85 -250 75 -250Q68 -250 62 -245T56 -231Q56 -221 230 257T407 740Q411 750 423 750Z"></path><path id="MJX-1-TEX-N-68" d="M41 46H55Q94 46 102 60V68Q102 77 102 91T102 124T102 167T103 217T103 272T103 329Q103 366 103 407T103 482T102 542T102 586T102 603Q99 622 88 628T43 637H25V660Q25 683 27 683L37 684Q47 685 66 686T103 688Q120 689 140 690T170 693T181 694H184V367Q244 442 328 442Q451 442 463 329Q464 322 464 190V104Q464 66 466 59T477 49Q498 46 526 46H542V0H534L510 1Q487 2 460 2T422 3Q319 3 310 0H302V46H318Q379 46 379 62Q380 64 380 200Q379 335 378 343Q372 371 358 385T334 402T308 404Q263 404 229 370Q202 343 195 315T187 232V168V108Q187 78 188 68T191 55T200 49Q221 46 249 46H265V0H257L234 1Q210 2 183 2T145 3Q42 3 33 0H25V46H41Z"></path><path id="MJX-1-TEX-N-3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path><path id="MJX-1-TEX-N-6E" d="M41 46H55Q94 46 102 60V68Q102 77 102 91T102 122T103 161T103 203Q103 234 103 269T102 328V351Q99 370 88 376T43 385H25V408Q25 431 27 431L37 432Q47 433 65 434T102 436Q119 437 138 438T167 441T178 442H181V402Q181 364 182 364T187 369T199 384T218 402T247 421T285 437Q305 442 336 442Q450 438 463 329Q464 322 464 190V104Q464 66 466 59T477 49Q498 46 526 46H542V0H534L510 1Q487 2 460 2T422 3Q319 3 310 0H302V46H318Q379 46 379 62Q380 64 380 200Q379 335 378 343Q372 371 358 385T334 402T308 404Q263 404 229 370Q202 343 195 315T187 232V168V108Q187 78 188 68T191 55T200 49Q221 46 249 46H265V0H257L234 1Q210 2 183 2T145 3Q42 3 33 0H25V46H41Z"></path><path id="MJX-1-TEX-N-6F" d="M28 214Q28 309 93 378T250 448Q340 448 405 380T471 215Q471 120 407 55T250 -10Q153 -10 91 57T28 214ZM250 30Q372 30 372 193V225V250Q372 272 371 288T364 326T348 362T317 390T268 410Q263 411 252 411Q222 411 195 399Q152 377 139 338T126 246V226Q126 130 145 91Q177 30 250 30Z"></path><path id="MJX-1-TEX-N-74" d="M27 422Q80 426 109 478T141 600V615H181V431H316V385H181V241Q182 116 182 100T189 68Q203 29 238 29Q282 29 292 100Q293 108 293 146V181H333V146V134Q333 57 291 17Q264 -10 221 -10Q187 -10 162 2T124 33T105 68T98 100Q97 107 97 248V385H18V422H27Z"></path><path id="MJX-1-TEX-N-73" d="M295 316Q295 356 268 385T190 414Q154 414 128 401Q98 382 98 349Q97 344 98 336T114 312T157 287Q175 282 201 278T245 269T277 256Q294 248 310 236T342 195T359 133Q359 71 321 31T198 -10H190Q138 -10 94 26L86 19L77 10Q71 4 65 -1L54 -11H46H42Q39 -11 33 -5V74V132Q33 153 35 157T45 162H54Q66 162 70 158T75 146T82 119T101 77Q136 26 198 26Q295 26 295 104Q295 133 277 151Q257 175 194 187T111 210Q75 227 54 256T33 318Q33 357 50 384T93 424T143 442T187 447H198Q238 447 268 432L283 424L292 431Q302 440 314 448H322H326Q329 448 335 442V310L329 304H301Q295 310 295 316Z"></path><path id="MJX-1-TEX-N-D7" d="M630 29Q630 9 609 9Q604 9 587 25T493 118L389 222L284 117Q178 13 175 11Q171 9 168 9Q160 9 154 15T147 29Q147 36 161 51T255 146L359 250L255 354Q174 435 161 449T147 471Q147 480 153 485T168 490Q173 490 175 489Q178 487 284 383L389 278L493 382Q570 459 587 475T609 491Q630 491 630 471Q630 464 620 453T522 355L418 250L522 145Q606 61 618 48T630 29Z"></path><path id="MJX-1-TEX-N-31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path><path id="MJX-1-TEX-N-2E" d="M78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0T96 17T78 60Z"></path><path id="MJX-1-TEX-N-38" d="M70 417T70 494T124 618T248 666Q319 666 374 624T429 515Q429 485 418 459T392 417T361 389T335 371T324 363L338 354Q352 344 366 334T382 323Q457 264 457 174Q457 95 399 37T249 -22Q159 -22 101 29T43 155Q43 263 172 335L154 348Q133 361 127 368Q70 417 70 494ZM286 386L292 390Q298 394 301 396T311 403T323 413T334 425T345 438T355 454T364 471T369 491T371 513Q371 556 342 586T275 624Q268 625 242 625Q201 625 165 599T128 534Q128 511 141 492T167 463T217 431Q224 426 228 424L286 386ZM250 21Q308 21 350 55T392 137Q392 154 387 169T375 194T353 216T330 234T301 253T274 270Q260 279 244 289T218 306L210 311Q204 311 181 294T133 239T107 157Q107 98 150 60T250 21Z"></path><path id="MJX-1-TEX-N-35" d="M164 157Q164 133 148 117T109 101H102Q148 22 224 22Q294 22 326 82Q345 115 345 210Q345 313 318 349Q292 382 260 382H254Q176 382 136 314Q132 307 129 306T114 304Q97 304 95 310Q93 314 93 485V614Q93 664 98 664Q100 666 102 666Q103 666 123 658T178 642T253 634Q324 634 389 662Q397 666 402 666Q410 666 410 648V635Q328 538 205 538Q174 538 149 544L139 546V374Q158 388 169 396T205 412T256 420Q337 420 393 355T449 201Q449 109 385 44T229 -22Q148 -22 99 32T50 154Q50 178 61 192T84 210T107 214Q132 214 148 197T164 157Z"></path><path id="MJX-1-TEX-N-32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path><path id="MJX-1-TEX-N-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path><path id="MJX-1-TEX-N-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(0.021493,-0.021493) translate(0, -750)"><g data-mml-node="math"><g data-mml-node="mtable" transform="translate(2078,0) translate(-2078,0)"><g transform="translate(0 750) matrix(1 0 0 -1 0 0) scale(46.53)"><svg data-table="true" preserveAspectRatio="xMidYMid" viewBox="4809 -750 1 1000"><g transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="mlabeledtr"><g data-mml-node="mtd"><g data-mml-node="mtext"><use data-c="6B" xlink:href="#MJX-1-TEX-N-6B"></use><use data-c="6D" xlink:href="#MJX-1-TEX-N-6D" transform="translate(528,0)"></use><use data-c="2F" xlink:href="#MJX-1-TEX-N-2F" transform="translate(1361,0)"></use><use data-c="68" xlink:href="#MJX-1-TEX-N-68" transform="translate(1861,0)"></use></g><g data-mml-node="mo" transform="translate(2694.8,0)"><use data-c="3D" xlink:href="#MJX-1-TEX-N-3D"></use></g><g data-mml-node="mtext" transform="translate(3750.6,0)"><use data-c="6B" xlink:href="#MJX-1-TEX-N-6B"></use><use data-c="6E" xlink:href="#MJX-1-TEX-N-6E" transform="translate(528,0)"></use><use data-c="6F" xlink:href="#MJX-1-TEX-N-6F" transform="translate(1084,0)"></use><use data-c="74" xlink:href="#MJX-1-TEX-N-74" transform="translate(1584,0)"></use><use data-c="73" xlink:href="#MJX-1-TEX-N-73" transform="translate(1973,0)"></use></g><g data-mml-node="mo" transform="translate(6339.8,0)"><use data-c="D7" xlink:href="#MJX-1-TEX-N-D7"></use></g><g data-mml-node="mn" transform="translate(7340,0)"><use data-c="31" xlink:href="#MJX-1-TEX-N-31"></use><use data-c="2E" xlink:href="#MJX-1-TEX-N-2E" transform="translate(500,0)"></use><use data-c="38" xlink:href="#MJX-1-TEX-N-38" transform="translate(778,0)"></use><use data-c="35" xlink:href="#MJX-1-TEX-N-35" transform="translate(1278,0)"></use><use data-c="32" xlink:href="#MJX-1-TEX-N-32" transform="translate(1778,0)"></use></g></g></g></g></svg><svg data-labels="true" preserveAspectRatio="xMaxYMid" viewBox="1278 -750 1 1000"><g data-labels="true" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="mtd" id="mjx-eqn:1"><g data-mml-node="mtext"><use data-c="28" xlink:href="#MJX-1-TEX-N-28"></use><use data-c="31" xlink:href="#MJX-1-TEX-N-31" transform="translate(389,0)"></use><use data-c="29" xlink:href="#MJX-1-TEX-N-29" transform="translate(889,0)"></use></g></g></g></svg></g></g></g></g></svg><mjx-assistive-mml unselectable="on" display="block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mtable displaystyle="true"><mlabeledtr><mtd><mtext>(1)</mtext></mtd><mtd><mtext>km/h</mtext><mo>=</mo><mtext>knots</mtext><mo>×</mo><mn>1.852</mn></mtd></mlabeledtr></mtable></math></mjx-assistive-mml></mjx-container></div></div><div class="md-diagram-panel md-fences-adv-panel" lang="mermaid"><svg id="mermaidChart0" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="flowchart mermaid-svg" style="max-width: 590.7093505859375px;" viewBox="-8 -8 590.7093505859375 75.5999755859375" role="graphics-document document" aria-roledescription="flowchart-v2"><style>#mermaidChart0{font-family:sans-serif;font-size:16px;fill:#ccc;}@keyframes edge-animation-frame{from{stroke-dashoffset:0;}}@keyframes dash{to{stroke-dashoffset:0;}}#mermaidChart0 .edge-animation-slow{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 50s linear infinite;stroke-linecap:round;}#mermaidChart0 .edge-animation-fast{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 20s linear infinite;stroke-linecap:round;}#mermaidChart0 .error-icon{fill:#a44141;}#mermaidChart0 .error-text{fill:#ddd;stroke:#ddd;}#mermaidChart0 .edge-thickness-normal{stroke-width:1px;}#mermaidChart0 .edge-thickness-thick{stroke-width:3.5px;}#mermaidChart0 .edge-pattern-solid{stroke-dasharray:0;}#mermaidChart0 .edge-thickness-invisible{stroke-width:0;fill:none;}#mermaidChart0 .edge-pattern-dashed{stroke-dasharray:3;}#mermaidChart0 .edge-pattern-dotted{stroke-dasharray:2;}#mermaidChart0 .marker{fill:lightgrey;stroke:lightgrey;}#mermaidChart0 .marker.cross{stroke:lightgrey;}#mermaidChart0 svg{font-family:sans-serif;font-size:16px;}#mermaidChart0 p{margin:0;}#mermaidChart0 .label{font-family:sans-serif;color:#ccc;}#mermaidChart0 .cluster-label text{fill:#F9FFFE;}#mermaidChart0 .cluster-label span{color:#F9FFFE;}#mermaidChart0 .cluster-label span p{background-color:transparent;}#mermaidChart0 .label text,#mermaidChart0 span{fill:#ccc;color:#ccc;}#mermaidChart0 .node rect,#mermaidChart0 .node circle,#mermaidChart0 .node ellipse,#mermaidChart0 .node polygon,#mermaidChart0 .node path{fill:#1f2020;stroke:#ccc;stroke-width:1px;}#mermaidChart0 .rough-node .label text,#mermaidChart0 .node .label text,#mermaidChart0 .image-shape .label,#mermaidChart0 .icon-shape .label{text-anchor:middle;}#mermaidChart0 .node .katex path{fill:#000;stroke:#000;stroke-width:1px;}#mermaidChart0 .rough-node .label,#mermaidChart0 .node .label,#mermaidChart0 .image-shape .label,#mermaidChart0 .icon-shape .label{text-align:center;}#mermaidChart0 .node.clickable{cursor:pointer;}#mermaidChart0 .root .anchor path{fill:lightgrey!important;stroke-width:0;stroke:lightgrey;}#mermaidChart0 .arrowheadPath{fill:lightgrey;}#mermaidChart0 .edgePath .path{stroke:lightgrey;stroke-width:2.0px;}#mermaidChart0 .flowchart-link{stroke:lightgrey;fill:none;}#mermaidChart0 .edgeLabel{background-color:hsl(0, 0%, 34.4117647059%);text-align:center;}#mermaidChart0 .edgeLabel p{background-color:hsl(0, 0%, 34.4117647059%);}#mermaidChart0 .edgeLabel rect{opacity:0.5;background-color:hsl(0, 0%, 34.4117647059%);fill:hsl(0, 0%, 34.4117647059%);}#mermaidChart0 .labelBkg{background-color:rgba(87.75, 87.75, 87.75, 0.5);}#mermaidChart0 .cluster rect{fill:hsl(180, 1.5873015873%, 28.3529411765%);stroke:rgba(255, 255, 255, 0.25);stroke-width:1px;}#mermaidChart0 .cluster text{fill:#F9FFFE;}#mermaidChart0 .cluster span{color:#F9FFFE;}#mermaidChart0 div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:sans-serif;font-size:12px;background:hsl(20, 1.5873015873%, 12.3529411765%);border:1px solid rgba(255, 255, 255, 0.25);border-radius:2px;pointer-events:none;z-index:100;}#mermaidChart0 .flowchartTitleText{text-anchor:middle;font-size:18px;fill:#ccc;}#mermaidChart0 rect.text{fill:none;stroke-width:0;}#mermaidChart0 .icon-shape,#mermaidChart0 .image-shape{background-color:hsl(0, 0%, 34.4117647059%);text-align:center;}#mermaidChart0 .icon-shape p,#mermaidChart0 .image-shape p{background-color:hsl(0, 0%, 34.4117647059%);padding:2px;}#mermaidChart0 .icon-shape rect,#mermaidChart0 .image-shape rect{opacity:0.5;background-color:hsl(0, 0%, 34.4117647059%);fill:hsl(0, 0%, 34.4117647059%);}#mermaidChart0 .label-icon{display:inline-block;height:1em;overflow:visible;vertical-align:-0.125em;}#mermaidChart0 .node .label-icon path{fill:currentColor;stroke:revert;stroke-width:revert;}#mermaidChart0 :root{--mermaid-alt-font-family:sans-serif;}</style><g><marker id="mermaidChart0_flowchart-v2-pointEnd" class="marker flowchart-v2" viewBox="0 0 10 10" refX="5" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker><marker id="mermaidChart0_flowchart-v2-pointStart" class="marker flowchart-v2" viewBox="0 0 10 10" refX="4.5" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 5 L 10 10 L 10 0 z" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker><marker id="mermaidChart0_flowchart-v2-circleEnd" class="marker flowchart-v2" viewBox="0 0 10 10" refX="11" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></circle></marker><marker id="mermaidChart0_flowchart-v2-circleStart" class="marker flowchart-v2" viewBox="0 0 10 10" refX="-1" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></circle></marker><marker id="mermaidChart0_flowchart-v2-crossEnd" class="marker cross flowchart-v2" viewBox="0 0 11 11" refX="12" refY="5.2" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><path d="M 1,1 l 9,9 M 10,1 l -9,9" class="arrowMarkerPath" style="stroke-width: 2; stroke-dasharray: 1, 0;"></path></marker><marker id="mermaidChart0_flowchart-v2-crossStart" class="marker cross flowchart-v2" viewBox="0 0 11 11" refX="-1" refY="5.2" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><path d="M 1,1 l 9,9 M 10,1 l -9,9" class="arrowMarkerPath" style="stroke-width: 2; stroke-dasharray: 1, 0;"></path></marker><g class="root"><g class="clusters"></g><g class="edgePaths"><path d="M96.547,33.8L121.547,33.8L142.547,33.8" id="L_Taxi_Takeoff_0" class=" edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style="" marker-end="url(#mermaidChart0_flowchart-v2-pointEnd)"></path><path d="M256.525,33.8L281.525,33.8L302.525,33.8" id="L_Takeoff_Cruise_0" class=" edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style="" marker-end="url(#mermaidChart0_flowchart-v2-pointEnd)"></path><path d="M411.286,33.8L436.286,33.8L457.286,33.8" id="L_Cruise_Landing_0" class=" edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style="" marker-end="url(#mermaidChart0_flowchart-v2-pointEnd)"></path></g><g class="edgeLabels"><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel "></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel "></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel "></span></div></foreignObject></g></g></g><g class="nodes"><g class="node default  " id="flowchart-Taxi-0" transform="translate(52.2734375, 33.79998779296875)"><rect class="basic label-container" style="" x="-44.2734375" y="-25.79998779296875" width="88.546875" height="51.5999755859375"></rect><g class="label" style="" transform="translate(-14.2734375, -10.79998779296875)"><rect></rect><foreignObject width="28.546875" height="21.5999755859375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel "><p>Taxi</p></span></div></foreignObject></g></g><g class="node default  " id="flowchart-Takeoff-1" transform="translate(201.5359344482422, 33.79998779296875)"><rect class="basic label-container" style="" x="-54.98905944824219" y="-25.79998779296875" width="109.97811889648438" height="51.5999755859375"></rect><g class="label" style="" transform="translate(-24.989059448242188, -10.79998779296875)"><rect></rect><foreignObject width="49.978118896484375" height="21.5999755859375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel "><p>Takeoff</p></span></div></foreignObject></g></g><g class="node default  " id="flowchart-Cruise-2" transform="translate(358.90545654296875, 33.79998779296875)"><rect class="basic label-container" style="" x="-52.380462646484375" y="-25.79998779296875" width="104.76092529296875" height="51.5999755859375"></rect><g class="label" style="" transform="translate(-22.380462646484375, -10.79998779296875)"><rect></rect><foreignObject width="44.76092529296875" height="21.5999755859375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel "><p>Cruise</p></span></div></foreignObject></g></g><g class="node default  " id="flowchart-Landing-3" transform="translate(517.9976348876953, 33.79998779296875)"><rect class="basic label-container" style="" x="-56.71171569824219" y="-25.79998779296875" width="113.42343139648438" height="51.5999755859375"></rect><g class="label" style="" transform="translate(-26.711715698242188, -10.79998779296875)"><rect></rect><foreignObject width="53.423431396484375" height="21.5999755859375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel "><p>Landing</p></span></div></foreignObject></g></g></g></g></g></svg></div><h2 id='alerts'><span>Alerts</span></h2><div class="md-alert md-alert-note note"><p><span class='md-alert-text md-alert-text-note'><svg viewBox="0 0 16 16" version="1.1" width="1em" height="1em" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</span><br><span>The fonts come with the theme. There is nothing else to install.</span></p></div><div class="md-alert md-alert-tip tip"><p><span class='md-alert-text md-alert-text-tip'><svg viewBox="0 0 16 16" version="1.1" width="1em" height="1em" aria-hidden="true"><path d="M8 1.5c-2.363 0-4 1.69-4 3.75 0 .984.424 1.625.984 2.304l.214.253c.223.264.47.556.673.848.284.411.537.896.621 1.49a.75.75 0 0 1-1.484.211c-.04-.282-.163-.547-.37-.847a8.456 8.456 0 0 0-.542-.68c-.084-.1-.173-.205-.268-.32C3.201 7.75 2.5 6.766 2.5 5.25 2.5 2.31 4.863 0 8 0s5.5 2.31 5.5 5.25c0 1.516-.701 2.5-1.328 3.259-.095.115-.184.22-.268.319-.207.245-.383.453-.541.681-.208.3-.33.565-.37.847a.751.751 0 0 1-1.485-.212c.084-.593.337-1.078.621-1.489.203-.292.45-.584.673-.848.075-.088.147-.173.213-.253.561-.679.985-1.32.985-2.304 0-2.06-1.637-3.75-4-3.75ZM5.75 12h4.5a.75.75 0 0 1 0 1.5h-4.5a.75.75 0 0 1 0-1.5ZM6 15.25a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 0 1.5h-2.5a.75.75 0 0 1-.75-.75Z"></path></svg>Tip</span><br><span>Wider windows fit longer lines of code.</span></p></div><div class="md-alert md-alert-important important"><p><span class='md-alert-text md-alert-text-important'><svg viewBox="0 0 16 16" version="1.1" width="1em" height="1em" aria-hidden="true"><path d="M0 1.75C0 .784.784 0 1.75 0h12.5C15.216 0 16 .784 16 1.75v9.5A1.75 1.75 0 0 1 14.25 13H8.06l-2.573 2.573A1.458 1.458 0 0 1 3 14.543V13H1.75A1.75 1.75 0 0 1 0 11.25Zm1.75-.25a.25.25 0 0 0-.25.25v9.5c0 .138.112.25.25.25h2a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.749.749 0 0 1 .53-.22h6.5a.25.25 0 0 0 .25-.25v-9.5a.25.25 0 0 0-.25-.25Zm7 2.25v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path></svg>Important</span><br><span>Copy the </span><code>legible</code><span> folder along with both CSS files.</span></p></div><div class="md-alert md-alert-warning warning"><p><span class='md-alert-text md-alert-text-warning'><svg viewBox="0 0 16 16" version="1.1" width="1em" height="1em" aria-hidden="true"><path d="M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path></svg>Warning</span><br><span>Typora lists new themes only after a restart.</span></p></div><div class="md-alert md-alert-caution caution"><p><span class='md-alert-text md-alert-text-caution'><svg viewBox="0 0 16 16" version="1.1" width="1em" height="1em" aria-hidden="true"><path d="M4.47.22A.749.749 0 0 1 5 0h6c.199 0 .389.079.53.22l4.25 4.25c.141.14.22.331.22.53v6a.749.749 0 0 1-.22.53l-4.25 4.25A.749.749 0 0 1 11 16H5a.749.749 0 0 1-.53-.22L.22 11.53A.749.749 0 0 1 0 11V5c0-.199.079-.389.22-.53Zm.84 1.28L1.5 5.31v5.38l3.81 3.81h5.38l3.81-3.81V5.31L10.69 1.5ZM8 4a.75.75 0 0 1 .75.75v3.5a.75.75 0 0 1-1.5 0v-3.5A.75.75 0 0 1 8 4Zm0 8a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Caution</span><br><span>Renaming the </span><code>legible</code><span> folder breaks the fonts.</span></p></div><h2 id='column-widths'><span>Column widths</span></h2><p><span>Code blocks fit 80 columns. Windows 1400 px and wider fit 100, and 1800 px and wider fit 120. Each ruler stays on one line once the window is wide enough.</span></p><h3 id='80-columns'><span>80 columns</span></h3><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="text"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="text"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 9.666667px; left: 3.993073px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: currentcolor;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: currentcolor;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style="text-rendering: auto;"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp; 2 &nbsp; &nbsp; &nbsp; &nbsp; 3 &nbsp; &nbsp; &nbsp; &nbsp; 4 &nbsp; &nbsp; &nbsp; &nbsp; 5 &nbsp; &nbsp; &nbsp; &nbsp; 6 &nbsp; &nbsp; &nbsp; &nbsp; 7 &nbsp; &nbsp; &nbsp; &nbsp; 8</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">12345678901234567890123456789012345678901234567890123456789012345678901234567890</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 47px;"></div><div class="CodeMirror-gutters" style="display: none; height: 47px;"></div></div></div></pre><h3 id='100-columns'><span>100 columns</span></h3><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="text"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="text"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 9.666667px; left: 3.993073px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: currentcolor;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: currentcolor;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style="text-rendering: auto;"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp; 2 &nbsp; &nbsp; &nbsp; &nbsp; 3 &nbsp; &nbsp; &nbsp; &nbsp; 4 &nbsp; &nbsp; &nbsp; &nbsp; 5 &nbsp; &nbsp; &nbsp; &nbsp; 6 &nbsp; &nbsp; &nbsp; &nbsp; 7 &nbsp; &nbsp; &nbsp; &nbsp; 8 &nbsp; &nbsp; &nbsp; &nbsp; 9 &nbsp; &nbsp; &nbsp;  10</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 47px;"></div><div class="CodeMirror-gutters" style="display: none; height: 47px;"></div></div></div></pre><h3 id='120-columns'><span>120 columns</span></h3><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="text"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="text"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 9.388916px; left: 3.993073px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: currentcolor;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: currentcolor;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style="text-rendering: auto;"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp; 2 &nbsp; &nbsp; &nbsp; &nbsp; 3 &nbsp; &nbsp; &nbsp; &nbsp; 4 &nbsp; &nbsp; &nbsp; &nbsp; 5 &nbsp; &nbsp; &nbsp; &nbsp; 6 &nbsp; &nbsp; &nbsp; &nbsp; 7 &nbsp; &nbsp; &nbsp; &nbsp; 8 &nbsp; &nbsp; &nbsp; &nbsp; 9 &nbsp; &nbsp; &nbsp;  10 &nbsp; &nbsp; &nbsp;  11 &nbsp; &nbsp; &nbsp;  12</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 93px;"></div><div class="CodeMirror-gutters" style="display: none; height: 93px;"></div></div></div></pre><figure class='table-figure'><table><thead><tr><th><span>Convention</span></th><th><span>Limit</span></th><th><span>Fits on screen</span></th><th><span>Fits in an A4 PDF</span></th></tr></thead><tbody><tr><td><span>PEP 8 (Python)</span></td><td><span>79</span></td><td><span>Every width</span></td><td><span>Yes</span></td></tr><tr><td><span>Prettier default</span></td><td><span>80</span></td><td><span>Every width</span></td><td><span>Yes</span></td></tr><tr><td><span>markdownlint MD013 default</span></td><td><span>80</span></td><td><span>Every width</span></td><td><span>Yes</span></td></tr><tr><td><span>Black (Python)</span></td><td><span>88</span></td><td><span>1400px and wider</span></td><td><span>No</span></td></tr><tr><td><span>rustfmt default</span></td><td><span>100</span></td><td><span>1400px and wider</span></td><td><span>No</span></td></tr><tr><td><span>Google Java Style</span></td><td><span>100</span></td><td><span>1400px and wider</span></td><td><span>No</span></td></tr><tr><td><span>JetBrains IDEs hard wrap</span></td><td><span>120</span></td><td><span>1800px and wider</span></td><td><span>No</span></td></tr></tbody></table></figure><p><span>B612 and Lato are free fonts.</span><sup class='md-footnote'><a href='#dfref-footnote-1' name='ref-footnote-1'>1</a></sup></p><div class='footnotes-area'  ><hr/>
+<div class='footnote-line'><span class='md-fn-count'>1</span> <span>Both are under the SIL Open Font License. The license texts are in the </span><code>legible</code><span> folder.</span> <a name='dfref-footnote-1' href='#ref-footnote-1' title='back to document' class='reversefootnote' >↩</a></div></div></div></div>
+<button id="legible-switch" type="button">Legible Dark</button>
+<script>
+(function () {
+  var root = document.documentElement, b = document.getElementById('legible-switch');
+  function show() {
+    var dark = root.getAttribute('data-theme') === 'dark';
+    b.textContent = dark ? 'Legible' : 'Legible Dark';
+    b.setAttribute('aria-label', dark ? 'Switch to Legible' : 'Switch to Legible Dark');
+  }
+  b.addEventListener('click', function () {
+    var t = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', t);
+    try { localStorage.setItem('legible-theme', t); } catch (e) {}
+    show();
+  });
+  show();
+})();
+</script>
+</body>
+</html>

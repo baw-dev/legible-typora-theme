@@ -1,10 +1,19 @@
 # Legible
 
+[![Licence: MIT](https://img.shields.io/badge/licence-MIT-0052a2.svg)](LICENSE)
+[![WCAG 2.2 AAA](https://img.shields.io/badge/WCAG_2.2-AAA_contrast-0d5f2f.svg)](#accessibility)
+[![Typora 1.12](https://img.shields.io/badge/Typora-1.12-17191c.svg)](https://typora.io)
+
 A high-contrast theme for [Typora](https://typora.io), in light and dark, set in the
 typeface Airbus made for cockpit screens.
 
-![Legible: a heading, a tip, a Python code block and a table of contrast ratios](screenshots/light.png)
-![The same page in Legible Dark](screenshots/dark.png)
+**[See it live ›](https://baw-dev.github.io/legible-typora-theme/)** The sample page,
+exported from Typora, in the theme's own fonts, with a switch for Legible Dark.
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="screenshots/dark.png">
+  <img alt="Legible: a heading, a tip, a Python code block and a table of contrast ratios" src="screenshots/light.png">
+</picture>
 
 ## Why B612
 
@@ -42,7 +51,7 @@ on the grid. PDFs print on white, with 80-column code on A4 and Letter.
 Typora won't send a dark theme to the printer, so from Legible Dark choose
 **Export to PDF**, which comes out the same as Legible.
 
-Open `sample.md` to see every element.
+Open `sample.md` to see every element, or [see it live](https://baw-dev.github.io/legible-typora-theme/).
 
 ## Accessibility
 
