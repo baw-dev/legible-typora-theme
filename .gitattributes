@@ -1,6 +1,6 @@
+# The download holds only what goes in Typora's theme folder.
+/README.md export-ignore
+/LICENSE export-ignore
 /screenshots export-ignore
 /.gitattributes export-ignore
 /.gitignore export-ignore
-/sample.html export-ignore
-/index.html export-ignore
-/.nojekyll export-ignore

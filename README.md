@@ -7,8 +7,8 @@
 A high-contrast theme for [Typora](https://typora.io), in light and dark, set in the
 typeface Airbus made for cockpit screens.
 
-**[See it live ›](https://baw-dev.github.io/legible-typora-theme/)** The sample page,
-exported from Typora, in the theme's own fonts, with a switch for Legible Dark.
+**[See it live ›](https://baw-dev.github.io/legible-typora-theme/)** A page exported from
+Typora, in the theme's own fonts, with a switch for Legible Dark.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="screenshots/dark.png">
@@ -36,8 +36,9 @@ Legible ships all eight styles, with [Lato](https://www.latofonts.com) for headi
 ## Install
 
 1. [Download Legible](https://github.com/baw-dev/legible-typora-theme/archive/refs/heads/main.zip) and unzip it.
+   The folder holds only the theme: `legible.css`, `legible-dark.css` and `legible`.
 2. In Typora, choose **Preferences › Appearance › Open Theme Folder**.
-3. Copy `legible.css`, `legible-dark.css` and the `legible` folder there.
+3. Copy everything in the unzipped folder there.
 4. Restart Typora, then choose **Themes › Legible** or **Legible Dark**.
 
 The fonts come with the theme. Tested with Typora 1.12 on macOS.
@@ -50,8 +51,6 @@ on the grid. PDFs print on white, with 80-column code on A4 and Letter.
 
 Typora won't send a dark theme to the printer, so from Legible Dark choose
 **Export to PDF**, which comes out the same as Legible.
-
-Open `sample.md` to see every element, or [see it live](https://baw-dev.github.io/legible-typora-theme/).
 
 ## Accessibility
 
