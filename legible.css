@@ -824,12 +824,18 @@ textarea {
     font-family: var(--font-heading);
 }
 
-/* Diagrams inherit the same high-contrast palette. */
+/* Diagrams inherit the same high-contrast palette, in the editor (.md-diagram-panel-preview)
+   and in HTML exports (.md-diagram-panel). */
 .md-diagram-panel-preview text,
 .md-diagram-panel-preview tspan,
 .md-diagram-panel-preview .label,
 .md-diagram-panel-preview .nodeLabel,
-.md-diagram-panel-preview .edgeLabel {
+.md-diagram-panel-preview .edgeLabel,
+.md-diagram-panel text,
+.md-diagram-panel tspan,
+.md-diagram-panel .label,
+.md-diagram-panel .nodeLabel,
+.md-diagram-panel .edgeLabel {
     fill: var(--text) !important;
     color: var(--text) !important;
     font-family: var(--font-heading) !important;
@@ -838,7 +844,11 @@ textarea {
 .md-diagram-panel-preview .node rect,
 .md-diagram-panel-preview .node circle,
 .md-diagram-panel-preview .node ellipse,
-.md-diagram-panel-preview .node polygon {
+.md-diagram-panel-preview .node polygon,
+.md-diagram-panel .node rect,
+.md-diagram-panel .node circle,
+.md-diagram-panel .node ellipse,
+.md-diagram-panel .node polygon {
     fill: var(--surface) !important;
     stroke: var(--border-strong) !important;
 }
@@ -846,13 +856,32 @@ textarea {
 .md-diagram-panel-preview .edgePath path,
 .md-diagram-panel-preview .flowchart-link,
 .md-diagram-panel-preview line,
-.md-diagram-panel-preview path.path {
+.md-diagram-panel-preview path.path,
+.md-diagram-panel .edgePath path,
+.md-diagram-panel .flowchart-link,
+.md-diagram-panel line,
+.md-diagram-panel path.path {
     stroke: var(--border-strong) !important;
 }
 
-.md-diagram-panel-preview marker path {
+.md-diagram-panel-preview marker path,
+.md-diagram-panel marker path {
     fill: var(--border-strong) !important;
     stroke: var(--border-strong) !important;
+}
+
+/* Mermaid sizes each label for its own font, and Lato runs a pixel or two wider. Keep
+   Mermaid's own wrapping choice instead of breaking mid-word, and let the label show whole. */
+.md-diagram-panel-preview foreignObject,
+.md-diagram-panel foreignObject {
+    overflow: visible;
+}
+
+.md-diagram-panel-preview foreignObject p,
+.md-diagram-panel foreignObject p {
+    margin: 0;
+    white-space: inherit;
+    overflow-wrap: normal;
 }
 
 @supports (text-autospace: normal) {
